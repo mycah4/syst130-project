@@ -76,7 +76,7 @@ def path1_escapepod():
 
     user_choice2 = input("Choose (1-2): ")
 
-    if user_choic2 = "1"
+    if user_choice2 = "1"
         health = health - 20
         print("You took 20 damage... Health: " + health)   # lowers player's health
 
