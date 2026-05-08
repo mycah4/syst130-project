@@ -1,7 +1,7 @@
 # ____________________________________________________________________    # MAIN MENU
 while True:
-    print("\n Main Menu")      # main menu prompt 
-    print("1. Start Game")
+    print("Main Menu")      # main menu prompt 
+    print("\n1. Start Game")
     print("2. Exit game")
 
     user_choice = input("\nChoose: ")
