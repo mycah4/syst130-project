@@ -208,12 +208,12 @@ def location2_bridge():
                     return true               
 
                 else:
-                print("You failed, the bridge is locking down")       # failed to answer the question correctly
-                return False
+                    print("You failed, the bridge is locking down")       # failed to answer the question correctly
+                    return False
 
             elif second_chance == "no":   # player escapes with nothing
-        print("\nYou leave the bridge with nothing...")
-        return False
+                print("\nYou leave the bridge with nothing...")
+                return False
         
             else:
         print("\nPlease answer yes or no")
