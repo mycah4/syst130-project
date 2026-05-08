@@ -89,14 +89,16 @@ def location1_hangerbay():
             if user_choice == "yes":
                 print("\nHe gives you an unknown key ")      # adds key to inventory
                 inventory.append("Mysterious_Key")
-
+                break
+                
             elif user_choice == "no":
                 print("\nYou ignore him, and continue by yourself ")
 
                 print("\nA fire blocks your path! ")
                 print("\n1. Run through and risk taking damage ")
                 print("\n2. Find another method ")
-
+                break
+                
             else:
                 print("\nPlease answer yes or no")
                 
