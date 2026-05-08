@@ -52,7 +52,19 @@ def create_player():
         player_type = "Medic"
 
     print("Welcome, " + player_name + "the " + player_class + " !")
-        
+
+# _____________________________________________________________________   # FIRST STORY PATH
+
+
+def path1_escapepod():
+
+    print("You go to the escape pods.")
+    print("Your crewmate asks for a favor: Help me clean the trash.")
+
+    user_choice = input("Help him? (YES/NO): ")
+
+
+
 
     
 
