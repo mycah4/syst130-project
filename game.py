@@ -262,20 +262,17 @@ def location3_medicalbay():
 
     print("\nThe medical bay cleared, you have what you need.")
     return True
-          
-
-        
-
-
-
-
-
-
-
-
-
+    
 # _____________________________________________________________________ # FOURTH STORY LOCATION (path 3)
 
+def location3_medicalbay():
+    global health, inventory, player_name
+
+
+    print("\nYou are now in location 3, the Medical Bay") # storyline
+    print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
+    print("\nA doctor waves you over frantically")
+    print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
 
 # _____________________________________________________________________ # LAST STORY LOCATION 
 
