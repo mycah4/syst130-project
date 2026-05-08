@@ -258,7 +258,7 @@ def location3_medicalbay():
 
     print("\nYou search the bodies. You find a keycard!") 
     if "Captain_Keycard" not in inventory: # checks if the keycard previously exists, if not you receive it
-        inventory.append("Captain_Keycard)
+        inventory.append("Captain_Keycard")
 
     print("\nThe medical bay cleared, you have what you need.")
     return True
