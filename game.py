@@ -115,7 +115,9 @@ def location1_hangerbay():
             if user_choice2 == 1:
                 health = health - 20
                 print("\nYou took 20 damage... Health: " , health)   # lowers player's health
+                break
 
+            
             elif user_choice2 == 2:
                 if "Mysterious_Key" in inventory:
                     print("\nYou open an unknown door and escape the pod!! ")
