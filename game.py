@@ -24,5 +24,10 @@ player_name = ""
 player_class = ""
 # _____________________________________________________________________
 
+def show_stats():
+    print("Story Level:", story_level)
+    print("Health:" health)
+    print("Inventory:", inventory)
+
 
 
