@@ -229,11 +229,24 @@ def location3_medicalbay():
     print("\nYou are now in location 3, the Medical Bay") # storyline
     print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
     print("\nA doctor waves you over frantically")
-   
-    print("You made it out successfully... take this medkit it'll help you!")
+    print("\nYou made it out successfully... take this medkit it'll help you!")
     inventory.append("Medkit")
 
     print("You gained a medkit! It gives +30 health when used.")
+
+    while True:
+        use = input("Do you want to use the medkit?(yes/no)")
+
+        if use == "yes":
+            health = health + 30
+            inventory.remove("Medkit")
+            print("\nYou're health increased to ", health)
+
+        elif use == "no":
+            print("\nYou decided to save it for later")
+
+        else:
+            print("\nPlease answer yes or no")
 
         
 
