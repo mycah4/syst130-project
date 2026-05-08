@@ -94,18 +94,24 @@ def location1_hangerbay():
             elif user_choice == "no":
                 print("\nYou ignore him, and continue by yourself ")
 
-                print("\nA fire blocks your path! ")
-                print("\n1. Run through and risk taking damage ")
-                print("\n2. Find another method ")
                 break
                 
             else:
                 print("\nPlease answer yes or no")
-                
-    while True:
-        try:
-            user_choice2 = input("\nChoose (1-2): ")
 
+
+
+    print("\nA fire blocks your path! ")
+    print("\n1. Run through and risk taking damage ")
+    print("\n2. Find another method ")
+
+
+
+    
+    while True:
+        
+            user_choice2 = input("\nChoose (1-2): ")
+            
             if user_choice2 == 1:
                 health = health - 20
                 print("\nYou took 20 damage... Health: " , health)   # lowers player's health
