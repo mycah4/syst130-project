@@ -51,7 +51,7 @@ def create_player():
     else:
         player_type = "Medic"
 
-    print("Welcome, " + player_name + "the " + player_class + " !")
+    print("Welcome, " + player_name + "the " + player_class + " !")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
@@ -61,7 +61,33 @@ def path1_escapepod():
     print("You go to the escape pods.")
     print("Your crewmate asks for a favor: Help me clean the trash.")
 
-    user_choice = input("Help him? (YES/NO): ")
+    user_choice = input("Help him? (YES/NO): ")   # asks for player's choice
+
+    if user_choice == "yes":
+        print("He gives you an unknown key")      # adds key to inventory
+        inventory.append("Mysterious_Key")
+
+    else:
+        print("You ignore him, and continue by yourself")
+
+    print("A fire blocks your path!")
+    print("1. Run through and risk taking damage")
+    print("2. Find another method")
+
+    user_choice2 = input("Choose (1-2): ")
+
+    if user_choic2 = "1"
+        health = health - 20
+        print("You took 20 damage... Health: " + health)   # lowers player's health
+
+    if "Mysterious_Key" in inventory:
+        print("You open an unknown door and escape the pod!!")
+        return true
+
+    else:
+        print("The door is locked, you can't escape the pod")
+        return false
+        
 
 
 
