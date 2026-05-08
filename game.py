@@ -110,7 +110,7 @@ def location1_hangerbay():
     
     while True:
         try:
-            user_choice2 = input("\nChoose (1-2): ")
+            user_choice2 = int(input("\nChoose (1-2): "))
             
             if user_choice2 == 1:
                 health = health - 20
