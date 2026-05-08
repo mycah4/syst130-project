@@ -118,13 +118,7 @@ def location1_hangerbay():
         
 # _____________________________________________________________________ # PATH SELECTING
 
-def choose_path():
-    print("\nYou see a corridor that splits into three seperate directions!")
-    print("\n1. Go to the bridge (Hack the main computer)")
-    print("\n2. Go to the medical bay (Find an unknown person with a special keycard)")
-    print("\n3. Go to the engine room (Help the engineer!)")
 
-    while True:
        
     
     
