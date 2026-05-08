@@ -207,14 +207,15 @@ def location2_bridge():
                     inventory.append("Launch_Code")
                     return true               
 
-            else:
+                else:
                 print("You failed, the bridge is locking down")       # failed to answer the question correctly
                 return False
 
-    elif second_chance == "no":   # player escapes with nothing
+            elif second_chance == "no":   # player escapes with nothing
         print("\nYou leave the bridge with nothing...")
         return False
-    else:
+        
+            else:
         print("\nPlease answer yes or no")
         
 
