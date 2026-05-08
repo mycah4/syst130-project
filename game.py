@@ -51,7 +51,7 @@ def create_player():
     else:
         player_class = "Medic"
 
-    print("Welcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
+    print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
