@@ -78,28 +78,31 @@ def location1_hangerbay():
     print("\nYou go to the escape pod. ")
     print("\nYour crewmate asks for a favor: Help me clean the trash. ")
 
-    user_choice = input("Help him? (yes/no): ")   # asks for player's choice
+    while True:
+        try:
+            user_choice = input("Help him? (yes/no): ")   # asks for player's choice
 
-    if user_choice == "yes":
-        print("\nHe gives you an unknown key ")      # adds key to inventory
-        inventory.append("Mysterious_Key")
+            if user_choice == "yes":
+                print("\nHe gives you an unknown key ")      # adds key to inventory
+                inventory.append("Mysterious_Key")
 
-    else:
-        print("\nYou ignore him, and continue by yourself ")
+            else:
+                print("\nYou ignore him, and continue by yourself ")
 
-    print("\nA fire blocks your path! ")
-    print("\n1. Run through and risk taking damage ")
-    print("\n2. Find another method ")
+                print("\nA fire blocks your path! ")
+                print("\n1. Run through and risk taking damage ")
+                print("\n2. Find another method ")
+    while True:
+        try:
+            user_choice2 = input("Choose (1-2): ")
 
-    user_choice2 = input("Choose (1-2): ")
+            if user_choice2 == "1":
+                health = health - 20
+                print("\nYou took 20 damage... Health: " , health)   # lowers player's health
 
-    if user_choice2 == "1":
-        health = health - 20
-        print("\nYou took 20 damage... Health: " , health)   # lowers player's health
-
-    elif "Mysterious_Key" in inventory:
-        print("\nYou open an unknown door and escape the pod!! ")
-        return True
+            elif "Mysterious_Key" in inventory:
+                print("\nYou open an unknown door and escape the pod!! ")
+            return True
 # _____________________________________________________________________ # PATH SELECTING
 
 def choose_path():
