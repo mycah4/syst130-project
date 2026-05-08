@@ -50,11 +50,11 @@ def create_player():
         try:
             user_choice = input("\nChoose (1-3): ")
 
-            if user_choice == "1":
+            if user_choice == 1:
                 player_class = "Soldier"
                 health = health + 30
         
-            elif user_choice == "2":
+            elif user_choice == 2:
                 player_class = "Engineer"
         
             else:
@@ -101,7 +101,7 @@ def location1_hangerbay():
         try:
             user_choice2 = input("Choose (1-2): ")
 
-            if user_choice2 == "1":
+            if user_choice2 == 1:
                 health = health - 20
                 print("\nYou took 20 damage... Health: " , health)   # lowers player's health
 
