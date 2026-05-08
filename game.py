@@ -11,11 +11,11 @@ while True:
         break
     
     elif user_choice == "2":
-        print("See you next time! ")
+        print("\nSee you next time! ")
         break
     
     else:
-        print("No choice found ")
+        print("\nNo choice found ")
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
