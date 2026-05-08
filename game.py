@@ -78,7 +78,7 @@ def path1_escapepod():
 
     if user_choice2 == "1":
         health = health - 20
-        print("You took 20 damage... Health: " + health)   # lowers player's health
+        print("You took 20 damage... Health: " , health)   # lowers player's health
 
     if "Mysterious_Key" in inventory:
         print("You open an unknown door and escape the pod!! ")
