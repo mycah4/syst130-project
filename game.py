@@ -159,7 +159,7 @@ def select_path():
                 print("\nPlease choose 1, 2, or 3")
 
         except ValueError:
-            print("\Invalid response, please enter a number")
+            print("\nInvalid response, please enter a number")
             continue
     
 # _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
