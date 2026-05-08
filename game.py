@@ -57,8 +57,11 @@ def create_player():
             elif user_choice == 2:
                 player_class = "Engineer"
         
-            else:
+            elif:
                 player_class = "Medic"
+
+            else:
+                print("\nPlease choose a response")
 
         except ValueError:
             print("\nInvalid response, please enter a number. ")
