@@ -42,14 +42,14 @@ def create_player():
     user_choice = input("\nChoose (1-3): ")
 
     if user_choice == "1":
-        player_type = "Soldier"
+        player_class = "Soldier"
         health = health + 30
         
     elif user_choice == "2":
-        player_type = "Engineer"
+        player_class = "Engineer"
         
     else:
-        player_type = "Medic"
+        player_class = "Medic"
 
     print("Welcome, " + player_name + " the" + player_class + " !")   # welcomes player with name and class
 
