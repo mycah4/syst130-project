@@ -153,7 +153,8 @@ def select_path():
                 return
 
             elif user_choice == 3:
-
+                return
+                
             else:
                 print("\nPlease choose 1, 2, or 3")
 
