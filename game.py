@@ -2,9 +2,9 @@
 while True:
     print("\n Main Menu")      # main menu prompt 
     print("1. Start Game")
-    print("2. Exit game:")
+    print("2. Exit game")
 
-    user_choice = input("Choose: ")
+    user_choice = input("\nChoose: ")
 
     if user_choice == "1":
         print("\nGame starting!")         # allows user to either leave or start game
