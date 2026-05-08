@@ -1,4 +1,4 @@
-# ____________________________________________________________________
+# ____________________________________________________________________    # MAIN MENU
 while True:
     print("\n Main Menu")      # main menu prompt 
     print("1. Start Game")
@@ -16,18 +16,23 @@ while True:
     
     else:
         print("No choice found")
-# ____________________________________________________________________
+# ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
 inventory = []
 player_name = ""
 player_class = ""
-# _____________________________________________________________________
+# _____________________________________________________________________   # PLAYER CREATION
 
 def show_stats():
-    print("Story Level:", story_level)
+    print("Story Level:", story_level)    # function to display stats
     print("Health:", health)
     print("Inventory:", inventory)
 
+def create_player():
+    global player_name, player_class, health   # function for character creation
 
+    player_name = input("Choose a name for your character")
+    
+    
 
