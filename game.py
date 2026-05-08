@@ -216,7 +216,7 @@ def location2_bridge():
                 return False
         
             else:
-        print("\nPlease answer yes or no")
+                print("\nPlease answer yes or no")
         
 
 
