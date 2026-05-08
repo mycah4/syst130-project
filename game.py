@@ -11,11 +11,11 @@ while True:
         break
     
     elif user_choice == "2":
-        print("See you next time!")
+        print("See you next time! ")
         break
     
     else:
-        print("No choice found")
+        print("No choice found ")
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
@@ -32,7 +32,7 @@ def show_stats():
 def create_player():
     global player_name, player_class, health   # function for character creation
 
-    player_name = input("Choose a name for your character") # gets player name
+    player_name = input("Choose a name for your character: ") # gets player name
 
     print("Choose your class!") # chooses player class
     print("1. Soldier (+30 health)")
@@ -58,21 +58,21 @@ def create_player():
 
 def path1_escapepod():
 
-    print("You go to the escape pods.")
-    print("Your crewmate asks for a favor: Help me clean the trash.")
+    print("You go to the escape pods. ")
+    print("Your crewmate asks for a favor: Help me clean the trash. ")
 
     user_choice = input("Help him? (YES/NO): ")   # asks for player's choice
 
     if user_choice == "yes":
-        print("He gives you an unknown key")      # adds key to inventory
+        print("He gives you an unknown key ")      # adds key to inventory
         inventory.append("Mysterious_Key")
 
     else:
-        print("You ignore him, and continue by yourself")
+        print("You ignore him, and continue by yourself ")
 
-    print("A fire blocks your path!")
-    print("1. Run through and risk taking damage")
-    print("2. Find another method")
+    print("A fire blocks your path! ")
+    print("1. Run through and risk taking damage ")
+    print("2. Find another method ")
 
     user_choice2 = input("Choose (1-2): ")
 
@@ -81,11 +81,11 @@ def path1_escapepod():
         print("You took 20 damage... Health: " + health)   # lowers player's health
 
     if "Mysterious_Key" in inventory:
-        print("You open an unknown door and escape the pod!!")
+        print("You open an unknown door and escape the pod!! ")
         return True
 
     else:
-        print("The door is locked, you can't escape the pod")
+        print("The door is locked, you can't escape the pod ")
         return False
 
 # _____________________________________________________________________  # function testing
