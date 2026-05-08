@@ -7,7 +7,7 @@ while True:
     user_choice = input("Choose: ")
 
     if user_choice == "1":
-        print("/nGame starting!")         # allows user to either leave or start game
+        print("\nGame starting!")         # allows user to either leave or start game
         break
     
     elif user_choice == "2":
@@ -34,10 +34,10 @@ def create_player():
 
     player_name = input("Choose a name for your character: ") # gets player name
 
-    print("Choose your class!") # chooses player class
-    print("1. Soldier (+30 health)")
-    print("2. Engineer (Auto-solves puzzles)")
-    print("3. Medic (Gain health after every fight)")
+    print("\nChoose your class!") # chooses player class
+    print("\n1. Soldier (+30 health)")
+    print("\n2. Engineer (Auto-solves puzzles)")
+    print("\n3. Medic (Gain health after every fight)")
 
     user_choice = input("Choose (1-3): ")
 
@@ -51,7 +51,7 @@ def create_player():
     else:
         player_type = "Medic"
 
-    print("Welcome, " + player_name + "the " + player_class + " !")   # welcomes player with name and class
+    print("Welcome, " + player_name + " the" , player_class , " !")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
@@ -61,7 +61,7 @@ def path1_escapepod():
     print("You go to the escape pods. ")
     print("Your crewmate asks for a favor: Help me clean the trash. ")
 
-    user_choice = input("Help him? (YES/NO): ")   # asks for player's choice
+    user_choice = input("Help him? (yes/no): ")   # asks for player's choice
 
     if user_choice == "yes":
         print("He gives you an unknown key ")      # adds key to inventory
