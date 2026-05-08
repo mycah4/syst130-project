@@ -226,55 +226,15 @@ def location3_medicalbay():
     global health, inventory
 
 
-    print("\nYou are now in location 3, the Bridge.")
-    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline
-    print("\nCaptain Voss is slumped over her terminal. A hologram flickers to life.")
-    print("\nThe captain's hologram appears, 'I've locked the escape. Solve my riddle first!'")
+    print("\nYou are now in location 3, the Medical Bay") # storyline
+    print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
+    print("\nA doctor waves you over frantically")
+   
+    print("You made it out successfully... take this medkit it'll help you!")
+    inventory.append("Medkit")
 
-    print("\nChallenge #1... the Captain's riddle")
-    print("\nWhat has keys but no locks?")
-    print("\nHas space but no room?")
-    print("\nHas a face but no eyes?")
+    print("You gained a medkit! It gives +30 health when used.")
 
-    answer = input("\nYour answer?: ")  # asks player for input to answer the puzzle
-
-    if answer == "keyboard" or answer == "a keyboard":  # if correct answer you receive two different items
-        print("\nCorrect. Take the keycard and my launch code '734'")
-        inventory.append("Keycard")
-        inventory.append("Launch_Code")
-        print("You received the captain's keycard and the launch code!")
-        return True
-
-    
-    else:
-        print("\nYou got the answer wrong, the Captain's Hologram shocks you")  # damages you for wrong answer
-        health = health - 15
-
-
-        while True:
-            anotherchance = input("\nTry again? (yes/no): ") # player rceives another chance
-            
-
-            if anotherchance == "yes":
-                print("\nThis is your last try, I have a head and a tail")
-                answer2 = input("What am I?")
-                
-                if answer2 == "coin" or answer2 == "a coin":            # receives two different item
-                    print("Take my keycard and launch code")
-                    inventory.append("Keycard")
-                    inventory.append("Launch_Code")
-                    return true               
-
-                else:
-                    print("You failed, the bridge is locking down")       # failed to answer the question correctly
-                    return False
-
-            elif second_chance == "no":   # player escapes with nothing
-                print("\nYou leave the bridge with nothing...")
-                return False
-        
-            else:
-                print("\nPlease answer yes or no")
         
 
 
