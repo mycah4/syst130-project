@@ -48,7 +48,7 @@ def create_player():
     
     while True:
         try:
-            user_choice = input("\nChoose (1-3): ")
+            user_choice = int(input("\nChoose (1-3): "))
 
             if user_choice == 1:
                 player_class = "Soldier"
@@ -82,24 +82,22 @@ def location1_hangerbay():
     print("\nYour crewmate asks for a favor: Help me clean the trash. ")
 
     while True:
-        try:
             user_choice = input("Help him? (yes/no): ")   # asks for player's choice
 
             if user_choice == "yes":
                 print("\nHe gives you an unknown key ")      # adds key to inventory
                 inventory.append("Mysterious_Key")
 
-            else:
+            elif user_choice == "no":
                 print("\nYou ignore him, and continue by yourself ")
 
                 print("\nA fire blocks your path! ")
                 print("\n1. Run through and risk taking damage ")
                 print("\n2. Find another method ")
 
-        except ValueError:
-            print("\nInvalid response, please enter a number. ")
-            continue
-            
+            else:
+                print("\nPlease answer yes or no")
+                
     while True:
         try:
             user_choice2 = input("Choose (1-2): ")
