@@ -8,11 +8,11 @@ while True: # while true helps with user input validation
         try:
             user_choice = int(input("\nChoose: "))
 
-            if user_choice == "1":
+            if user_choice == 1:
                 print("\nGame starting!")         # allows user to either leave or start game
                 break
     
-            elif user_choice == "2":
+            elif user_choice == 2:
                 print("\nSee you next time! ")
                 break
     
