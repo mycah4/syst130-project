@@ -102,7 +102,15 @@ def location1_hangerbay():
 
             elif "Mysterious_Key" in inventory:
                 print("\nYou open an unknown door and escape the pod!! ")
-            return True
+                
+            else:
+                print("\nPlease choose an option")
+
+        except ValueError:
+            print("\nInvalid response, please enter a number")
+            continue
+
+        
 # _____________________________________________________________________ # PATH SELECTING
 
 def choose_path():
