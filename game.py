@@ -45,18 +45,23 @@ def create_player():
     print("\n1. Soldier (+30 health)")
     print("\n2. Engineer (Auto-solves puzzles)")
     print("\n3. Medic (Gain health after every fight)")
+    
+    while True
+        try:
+            user_choice = input("\nChoose (1-3): ")
 
-    user_choice = input("\nChoose (1-3): ")
+            if user_choice == "1":
+                player_class = "Soldier"
+                health = health + 30
+        
+            elif user_choice == "2":
+                player_class = "Engineer"
+        
+            else:
+                player_class = "Medic"
 
-    if user_choice == "1":
-        player_class = "Soldier"
-        health = health + 30
-        
-    elif user_choice == "2":
-        player_class = "Engineer"
-        
-    else:
-        player_class = "Medic"
+    except ValueError:
+        print("\nInvalid response, please enter a number. ")
 
     print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
