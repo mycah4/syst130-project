@@ -55,9 +55,8 @@ def create_player():
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
-global health
-
 def path1_escapepod():
+    global health
 
     print("You go to the escape pods. ")
     print("Your crewmate asks for a favor: Help me clean the trash. ")
