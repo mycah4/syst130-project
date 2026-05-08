@@ -143,7 +143,23 @@ def select_path():
     print("\n3. Go to the engine room (Help the engineer!)")
 
     while True:
-    
+        try: 
+            user_choice = int(input("\nChoose a path (1-3): "))
+
+            if user_choice == 1:
+                return 1
+
+            if user_choice == 2:
+                return
+
+            if user_choice == 3
+
+            else:
+                print("\nPlease choose 1, 2, or 3")
+
+        except ValuError:
+            print("\Invalid response, please enter a number")
+            continue
     
     
 
