@@ -51,7 +51,7 @@ def create_player():
     else:
         player_type = "Medic"
 
-    print("Welcome, " + player_name + "the " + player_class + " !"
+    print("Welcome, " + player_name + "the " + player_class + " !")
         
 
     
