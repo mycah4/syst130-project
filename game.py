@@ -85,7 +85,7 @@ def path1_escapepod():
         return True
 
     else:
-        print("\nThe door is locked, you can't escape the pod ")
+        print("\nThe door is locked, you can't escape the pod leading to your death! ")
         return False
 
 # _____________________________________________________________________  # function testing
