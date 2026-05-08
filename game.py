@@ -57,7 +57,7 @@ def create_player():
             elif user_choice == 2:
                 player_class = "Engineer"
         
-            elif:
+            elif
                 player_class = "Medic"
 
             else:
