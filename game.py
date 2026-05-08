@@ -19,3 +19,5 @@ health = 100
 inventory = []
 player_name = ""
 player_class ""
+
+
