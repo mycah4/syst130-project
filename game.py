@@ -5,10 +5,10 @@ while True:
 
   user_choice = input("Choose: ")
 
-  if choice == "1":
+  if user_choice == "1":
     print("Game starting")         # allows user to either leave or start game
     break
-  elif choice = "2":
+  elif user_choice = "2":
     print("See you next time!")
     break
   else:
