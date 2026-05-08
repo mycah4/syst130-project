@@ -25,9 +25,9 @@ player_class = ""
 # _____________________________________________________________________   # PLAYER CREATION
 
 def show_stats():
-    print("Story Level:", story_level)    # function to display stats
-    print("Health:", health)
-    print("Inventory:", inventory)
+    print("\nStory Level:", story_level)    # function to display stats
+    print("\nHealth:", health)
+    print("\nInventory:", inventory)
 
 def create_player():
     global player_name, player_class, health   # function for character creation
