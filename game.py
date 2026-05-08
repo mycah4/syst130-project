@@ -141,7 +141,7 @@ create_player()
 
 show_stats()
 
-path1_escapepod()
+location1_hangerbay()
 
 
 
