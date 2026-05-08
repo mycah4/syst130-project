@@ -20,6 +20,6 @@ story_level = 1     # global variables
 health = 100
 inventory = []
 player_name = ""
-player_class ""
+player_class = ""
 _____________________________________________________________________
 
