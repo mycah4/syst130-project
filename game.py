@@ -137,14 +137,14 @@ def location1_hangerbay():
 # _____________________________________________________________________ # PATH SELECTING
 
 def select_path():
-    print("\nYou see a corridor that splits into three seperate directions!")
+    print("\nYou see a corridor that splits into three seperate directions!")  # function to pick between three paths
     print("\n1. Go to the bridge (Hack the main computer)")
     print("\n2. Go to the medical bay (Find an unknown person with a special keycard)")
     print("\n3. Go to the engine room (Help the engineer!)")
 
     while True:
         try: 
-            user_choice = int(input("\nChoose a path (1-3): "))
+            user_choice = int(input("\nChoose a path (1-3): ")) # grabs input
 
             if user_choice == 1:
                 return 1
@@ -158,10 +158,11 @@ def select_path():
             else:
                 print("\nPlease choose 1, 2, or 3")
 
-        except ValuError:
+        except ValueError:
             print("\Invalid response, please enter a number")
             continue
     
+# _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
     
 
 
