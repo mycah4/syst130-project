@@ -82,11 +82,11 @@ def path1_escapepod():
 
     if "Mysterious_Key" in inventory:
         print("You open an unknown door and escape the pod!!")
-        return true
+        return True
 
     else:
         print("The door is locked, you can't escape the pod")
-        return false
+        return False
 
 # _____________________________________________________________________  # function testing
          
