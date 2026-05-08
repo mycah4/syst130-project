@@ -26,7 +26,7 @@ player_class = ""
 
 def show_stats():
     print("Story Level:", story_level)
-    print("Health:" health)
+    print("Health:", health)
     print("Inventory:", inventory)
 
 
