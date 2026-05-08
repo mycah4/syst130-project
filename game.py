@@ -53,12 +53,16 @@ def create_player():
 
     print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
-# _____________________________________________________________________   # FIRST STORY PATH
+# _____________________________________________________________________   # FIRST STORY LOCATION
 
-def path1_escapepod():
-    global health
+def location1_hangerbay():
+    global health, inventory
 
-    print("\nYou go to the escape pods. ")
+    print("\nYou spawn in location 1, Hanger Bay.")
+    print("\nThe ship's hangar is smoky and dark. EMergency lights flicker.")
+    print("\nAn escape pod sits in the distance, but the door is locked.")
+
+    print("\nYou go to the escape pod. ")
     print("\nYour crewmate asks for a favor: Help me clean the trash. ")
 
     user_choice = input("Help him? (yes/no): ")   # asks for player's choice
@@ -80,14 +84,10 @@ def path1_escapepod():
         health = health - 20
         print("\nYou took 20 damage... Health: " , health)   # lowers player's health
 
-    elif "Mysterious_Key" in inventory:
+    else "Mysterious_Key" in inventory:
         print("\nYou open an unknown door and escape the pod!! ")
         return True
-
-    else:
-        print("\nThe door is locked, you can't escape the pod leading to your death! ")
-        return False
-
+# _____________________________________________________________________ # P
 # _____________________________________________________________________  # function testing
          
 create_player()
