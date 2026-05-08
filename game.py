@@ -92,6 +92,11 @@ def location1_hangerbay():
                 print("\nA fire blocks your path! ")
                 print("\n1. Run through and risk taking damage ")
                 print("\n2. Find another method ")
+
+        except ValueError:
+            print("\nInvalid response, please enter a number. ")
+            continue
+            
     while True:
         try:
             user_choice2 = input("Choose (1-2): ")
