@@ -67,7 +67,7 @@ def create_player():
             print("\nInvalid response, please enter a number. ")
             continue
     
-    break
+        break
 
     print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
