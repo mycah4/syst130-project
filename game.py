@@ -64,13 +64,13 @@ def path1_escapepod():
     user_choice = input("Help him? (yes/no): ")   # asks for player's choice
 
     if user_choice == "yes":
-        print("He gives you an unknown key ")      # adds key to inventory
+        print("\nHe gives you an unknown key ")      # adds key to inventory
         inventory.append("Mysterious_Key")
 
     else:
-        print("You ignore him, and continue by yourself ")
+        print("\nYou ignore him, and continue by yourself ")
 
-    print("A fire blocks your path! ")
+    print("\nA fire blocks your path! ")
     print("1. Run through and risk taking damage ")
     print("2. Find another method ")
 
