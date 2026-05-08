@@ -164,7 +164,7 @@ def select_path():
     
 # _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
     
-def location2_bridge()
+def location2_bridge():
     global health, inventrory
 
 
