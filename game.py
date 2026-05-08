@@ -87,8 +87,14 @@ def path1_escapepod():
     else:
         print("The door is locked, you can't escape the pod")
         return false
-        
 
+# _____________________________________________________________________  # function testing
+         
+create_player()
+
+show_stats()
+
+path1_escapepod()
 
 
 
