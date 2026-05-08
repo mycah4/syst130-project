@@ -164,7 +164,19 @@ def select_path():
     
 # _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
     
+def location2_bridge()
+    global health, inventrory
 
+
+    print("\nYou are now in location 2, the Bridge.")
+    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline
+    print("\nCaptain Voss is slumped over her terminal. A hologram flickers to life.")
+    print("\nThe captain's hologram appears, 'I've locked the escape. Solve my riddle first!'")
+
+    print("\nChallenge #1... the Captain's riddle")
+    print("\nWhat has keys but no locks?")
+    print("\nHas space but no room?")
+    print("\nHas a face but no eyes?")
 
 
 
