@@ -55,6 +55,7 @@ def create_player():
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
+global health
 
 def path1_escapepod():
 
