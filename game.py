@@ -60,9 +60,9 @@ def create_player():
             else:
                 player_class = "Medic"
 
-    except ValueError:
-        print("\nInvalid response, please enter a number. ")
-        continue
+        except ValueError:
+            print("\nInvalid response, please enter a number. ")
+            continue
 
     print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
