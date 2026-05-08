@@ -51,15 +51,15 @@ def create_player():
     else:
         player_class = "Medic"
 
-    print("Welcome, " + player_name + " the " + player_class + " !")   # welcomes player with name and class
+    print("Welcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
 def path1_escapepod():
     global health
 
-    print("You go to the escape pods. ")
-    print("Your crewmate asks for a favor: Help me clean the trash. ")
+    print("\nYou go to the escape pods. ")
+    print("\nYour crewmate asks for a favor: Help me clean the trash. ")
 
     user_choice = input("Help him? (yes/no): ")   # asks for player's choice
 
@@ -71,21 +71,21 @@ def path1_escapepod():
         print("\nYou ignore him, and continue by yourself ")
 
     print("\nA fire blocks your path! ")
-    print("1. Run through and risk taking damage ")
-    print("2. Find another method ")
+    print("\n1. Run through and risk taking damage ")
+    print("\n2. Find another method ")
 
     user_choice2 = input("Choose (1-2): ")
 
     if user_choice2 == "1":
         health = health - 20
-        print("You took 20 damage... Health: " , health)   # lowers player's health
+        print("\nYou took 20 damage... Health: " , health)   # lowers player's health
 
     elif "Mysterious_Key" in inventory:
-        print("You open an unknown door and escape the pod!! ")
+        print("\nYou open an unknown door and escape the pod!! ")
         return True
 
     else:
-        print("The door is locked, you can't escape the pod ")
+        print("\nThe door is locked, you can't escape the pod ")
         return False
 
 # _____________________________________________________________________  # function testing
