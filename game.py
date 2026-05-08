@@ -46,7 +46,7 @@ def create_player():
     print("\n2. Engineer (Auto-solves puzzles)")
     print("\n3. Medic (Gain health after every fight)")
     
-    while True
+    while True:
         try:
             user_choice = input("\nChoose (1-3): ")
 
