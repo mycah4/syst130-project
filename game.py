@@ -14,7 +14,7 @@ while True: # while true helps with user input validation
     
             elif user_choice == 2:
                 print("\nSee you next time! ")
-                break
+                exit()
     
             else:
                 print("\nPlease choose an option. ")
