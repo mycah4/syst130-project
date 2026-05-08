@@ -223,30 +223,46 @@ def location2_bridge():
 # _____________________________________________________________________ # THIRD STORY LOCATION (path 2)
 
 def location3_medicalbay():
-    global health, inventory
+    global health, inventory, player_name
 
 
     print("\nYou are now in location 3, the Medical Bay") # storyline
     print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
     print("\nA doctor waves you over frantically")
-    print("\nYou made it out successfully... take this medkit it'll help you!")
+    print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
     inventory.append("Medkit")
 
     print("You gained a medkit! It gives +30 health when used.")
 
     while True:
-        use = input("Do you want to use the medkit?(yes/no)")
+        use = input("Do you want to use the medkit?(yes/no)") # asks for player input to use medkit
 
         if use == "yes":
             health = health + 30
-            inventory.remove("Medkit")
+            inventory.remove("Medkit")   # removes medkit
             print("\nYou're health increased to ", health)
 
         elif use == "no":
-            print("\nYou decided to save it for later")
+            print("\nYou decided to save it for later") # stays in inventory
 
         else:
             print("\nPlease answer yes or no")
+
+    print("\nAn unknown figure approaches you")  # storyline
+    print("\nHello, I am Ensign Riley... The captain left her keycard behind on the bridge. I'm injured, can you find it?")
+    print("\nBefore you leave this might be important to you!")
+    print("He gives you the launch code.")
+
+    if "Launch_Code" not in inventory:  # checks if launch code previously exists, if not you receive it
+        inventory.append("Launch_Code") 
+
+    print("\nYou search the bodies. You find a keycard!") 
+    if "Captain_Keycard" not in inventory: # checks if the keycard previously exists, if not you receive it
+        inventory.append("Captain_Keycard)
+
+    print("\nThe medical bay cleared, you have what you need.")
+    return True
+          
 
         
 
