@@ -45,7 +45,7 @@ def create_player():
         player_type = "Soldier"
         health = health + 30
         
-    elif user choice == "2":
+    elif user_choice == "2":
         player_type = "Engineer"
         
     else:
