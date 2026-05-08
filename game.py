@@ -201,7 +201,7 @@ def location2_bridge():
                 print("\nThis is your last try, I have a head and a tail")
                 answer2 = input("What am I?")
                 
-                if answer2 == "coin" or answer2 == "a coin"            # receives two different item
+                if answer2 == "coin" or answer2 == "a coin":            # receives two different item
                     print("Take my keycard and launch code")
                     inventory.append("Keycard")
                     inventory.append("Launch_Code")
