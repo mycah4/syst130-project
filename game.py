@@ -7,7 +7,7 @@ while True:
     user_choice = input("Choose: ")
 
     if user_choice == "1":
-        print("Game starting!")         # allows user to either leave or start game
+        print("/nGame starting!")         # allows user to either leave or start game
         break
     
     elif user_choice == "2":
