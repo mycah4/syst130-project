@@ -32,14 +32,14 @@ def show_stats():
 def create_player():
     global player_name, player_class, health   # function for character creation
 
-    player_name = input("Choose a name for your character: ") # gets player name
+    player_name = input("\nChoose a name for your character: ") # gets player name
 
     print("\nChoose your class!") # chooses player class
     print("\n1. Soldier (+30 health)")
     print("\n2. Engineer (Auto-solves puzzles)")
     print("\n3. Medic (Gain health after every fight)")
 
-    user_choice = input("Choose (1-3): ")
+    user_choice = input("\nChoose (1-3): ")
 
     if user_choice == "1":
         player_type = "Soldier"
@@ -51,7 +51,7 @@ def create_player():
     else:
         player_type = "Medic"
 
-    print("Welcome, " + player_name + " the" , player_class , " !")   # welcomes player with name and class
+    print("Welcome, " + player_name + " the" + player_class + " !")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY PATH
 
