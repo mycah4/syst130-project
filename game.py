@@ -33,6 +33,26 @@ def create_player():
     global player_name, player_class, health   # function for character creation
 
     player_name = input("Choose a name for your character")
-    
+
+    print("Choose your class!")
+    print("1. Soldier (+30 health)")
+    print("2. Engineer (Auto-solves puzzles)")
+    print("3. Medic (Gain health after every fight)")
+
+    user_choice = input("Choose (1-3): ")
+
+    if user_choice == "1":
+        player_type = "Soldier"
+        health = health + 30
+        
+    elif user choice == "2":
+        player_type = "Engineer"
+        
+    else:
+        player_type = "Medic"
+
+    print("Welcome, " + player_name + "the " + player_class + " !"
+        
+
     
 
