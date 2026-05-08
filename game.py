@@ -125,7 +125,7 @@ def location1_hangerbay():
                     
                 else:
                     print("\nYou are trapped...you died")
-                
+                    exit()
             else:
                 print("\nPlease choose an option")
 
