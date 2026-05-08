@@ -102,7 +102,7 @@ def location1_hangerbay():
 
 
     print("\nA fire blocks your path! ")
-    print("\n1. Run through and risk taking damage ")
+    print("\n1. Run through and risk taking damage ")      # pick between two different choices
     print("\n2. Find another method ")
 
 
@@ -136,8 +136,14 @@ def location1_hangerbay():
         
 # _____________________________________________________________________ # PATH SELECTING
 
+def select_path():
+    print("\nYou see a corridor that splits into three seperate directions!")
+    print("\n1. Go to the bridge (Hack the main computer)")
+    print("\n2. Go to the medical bay (Find an unknown person with a special keycard)")
+    print("\n3. Go to the engine room (Help the engineer!)")
 
-       
+    while True:
+    
     
     
 
