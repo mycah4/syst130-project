@@ -119,7 +119,8 @@ def location1_hangerbay():
             elif user_choice2 == 2:
                 if "Mysterious_Key" in inventory:
                     print("\nYou open an unknown door and escape the pod!! ")
-
+                    break
+                    
                 else:
                     print("\nYou are trapped...you died")
                 
