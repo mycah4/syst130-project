@@ -59,7 +59,7 @@ def location1_hangerbay():
     global health, inventory
 
     print("\nYou spawn in location 1, Hanger Bay.")
-    print("\nThe ship's hangar is smoky and dark. EMergency lights flicker.")
+    print("\nThe ship's hangar is smoky and dark. Emergency lights flicker.")
     print("\nAn escape pod sits in the distance, but the door is locked.")
 
     print("\nYou go to the escape pod. ")
@@ -87,7 +87,28 @@ def location1_hangerbay():
     else "Mysterious_Key" in inventory:
         print("\nYou open an unknown door and escape the pod!! ")
         return True
-# _____________________________________________________________________ # P
+# _____________________________________________________________________ # PATH SELECTING
+
+def choose_path():
+    print("\nYou see a corridor that splits into three seperate directions!")
+    print("\n1. Go to the bridge (Hack the main computer)")
+    print("\n2. Go to the medical bay (Find an unknown person with a special keycard)")
+    print("\n3. Go to the engine room (Help the engineer!)")
+
+    while True:
+       
+    
+    
+
+
+
+
+
+
+
+
+
+
 # _____________________________________________________________________  # function testing
          
 create_player()
