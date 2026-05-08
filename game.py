@@ -1,21 +1,28 @@
 # ____________________________________________________________________    # MAIN MENU
-while True:
+while True: # while true helps with user input validation
     print("Main Menu")      # main menu prompt 
     print("\n1. Start Game")
     print("2. Exit game")
 
-    user_choice = input("\nChoose: ")
+    while True:  
+        try:
+            user_choice = int(input("\nChoose: "))
 
-    if user_choice == "1":
-        print("\nGame starting!")         # allows user to either leave or start game
-        break
+            if user_choice == "1":
+                print("\nGame starting!")         # allows user to either leave or start game
+                break
     
-    elif user_choice == "2":
-        print("\nSee you next time! ")
-        break
+            elif user_choice == "2":
+                print("\nSee you next time! ")
+                break
     
-    else:
-        print("\nNo choice found ")
+            else:
+                print("\nPlease choose an option. ")
+        
+        except ValueError: 
+            print("\nInvalid response, please enter a number") 
+            continue
+    break
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
