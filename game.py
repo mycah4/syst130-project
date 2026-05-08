@@ -91,7 +91,7 @@ def location1_hangerbay():
         health = health - 20
         print("\nYou took 20 damage... Health: " , health)   # lowers player's health
 
-    else: "Mysterious_Key" in inventory:
+    else: "Mysterious_Key" in inventory
         print("\nYou open an unknown door and escape the pod!! ")
         return True
 # _____________________________________________________________________ # PATH SELECTING
