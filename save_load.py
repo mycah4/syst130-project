@@ -3,7 +3,7 @@ import json
 import os
 from audit import create_audit_log
 
-def save_game():       # save game with JSON and SHA256 hash for temper detection
+def save_game(health, inventory, player_name, player_class):       # save game with JSON and SHA256 hash for temper detection
 
 
     game_data = {             # dictionary for game data
@@ -19,7 +19,7 @@ def save_game():       # save game with JSON and SHA256 hash for temper detectio
     game_hash = hashlib.sha256(json_data.encode()).hexdigest()  # creates sha256 of json string
 
     with open("savegame.json", "w") as f:
-        json.dump({"hash": game_hash, "data": game_data}, f, indent=2) # saves hash and json to a file
+        json.dump({"hash": game_hash, "data": game_data}, f, indent=2}) # saves hash and json to a file
 
     print("Game saved with tamper protection")
     create_audit_log("SAVE", f"Game saved. Health: {health")
@@ -45,7 +45,7 @@ def load_game(): # loads game and checks if it has been tampered
             print("\nYour save file has been modified")
             print("\nYour safe file is rejected for security reasons")
             print("\nStarting a new game instead.")
-            create_audit_log("TAMPER_DETECTED", Save file hash mismatch")
+            create_audit_log("TAMPER_DETECTED", "Save file hash mismatch")
             return None    
 
         print("\nGame loaded successfully") # not tampered
@@ -55,10 +55,10 @@ def load_game(): # loads game and checks if it has been tampered
 
     except FileNotFoundError: # if no file found starts a new game
         print("No save file found. Starting a new game.")
-        return False
+        return None
 
     except json.JSONDecodeError: # if json error starts a new game
         print("Save file error. Starting a new game")
-        return False
+        return None
 
 
