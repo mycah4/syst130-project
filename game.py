@@ -15,7 +15,7 @@ def start_game():
         player.inventory = saved_data["inventory"] 
         player.player_name = saved_data["player_name"]
         player.player_class = saved_data["player_class"]
-        print("\nWelcome back, {player.player_name}!")
+        print(f"\nWelcome back, {player.player_name}!")
     else:
         player.create_player()
 
@@ -79,7 +79,7 @@ while True: # prompts main menu
             player.inventory = saved["inventory"]
             player.player_name = saved["player_name"]
             player.player_class = saved["player_class"]
-            print(f"\nWelcome back, {player.player_name!")
+            print(f"\nWelcome back, {player.player_name}!")
             locations.location5_escapepodbay()
         break
     elif choice == "3": # exits the game
