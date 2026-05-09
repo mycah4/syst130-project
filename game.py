@@ -53,10 +53,40 @@ def start_game():
 
     print("\nYour final stats! ") # prints final stats
     player.show_stats()
+    create_audit_log("Complete", Game finished")
 
-# _____________________________________________________________________  # function          
+# _____________________________________________________________________  #  MAIN MENU        
 
-start_game()
+while True: # prompts main menu
+    print("\nMain Menu")
+    print("\n1. Start New Game")
+    print("\n2. Load Game")
+    print("\n3. Exit")
+
+    choice = input("\nChoose (1-3): ") # asks user for choice
+
+    if choice == "1": #c reates new game
+        create_audit_log("MENU", "Starting new game") 
+        start_game()
+        break
+    elif choice == "2": # loads new game
+        create_audit_log("MENU", Loading saved game")
+        saved = load_game()
+        if saved:
+            player.health = saved["health"]
+            player.inventory = saved["inventory"]
+            player.player_name = saved["player_name"]
+            player.player_class = saved["player_class"]
+            print(f"\nWelcome back, {player.player_name!")
+            locations.location5_escapepodbay()
+        break
+    elif choice == "3": # exits the game
+        print("\nYou exited the game")
+        create_audit_log("\nEXIT", "Player quit")
+        exit()
+    else:
+        print("\nInvalid choice. Enter 1, 2, or 3")
+          
 
     
 
