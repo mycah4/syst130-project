@@ -1,3 +1,28 @@
+import hashlib
+import json
+import os
+from datetime import datetime
+
+
+# ____________________________________________________________________    # AUDIT LOGGING
+
+def create_audit_log(event_type, details):
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ____________________________________________________________________    # MAIN MENU
 while True: # while true helps with user input validation
     print("Main Menu")      # main menu prompt 
