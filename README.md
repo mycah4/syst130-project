@@ -156,11 +156,17 @@ Security benefit: Prevents players from cheating by editing health or inventory 
 
 syst130-project/
 ├── game.py          # Main game loop and menu
+
 ├── player.py        # Player stats and creation
+
 ├── locations.py     # All 5 locations and challenges
+
 ├── save_load.py     # Save/load with SHA256 tamper check
+
 ├── audit.py         # Audit logging functions
+
 ├── savegame.json    # Auto-generated save file
+
 └── audit_log.txt    # Auto-generated security log
 
 ## Version
