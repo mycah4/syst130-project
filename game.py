@@ -240,9 +240,9 @@ def location3_medicalbay():
         use = input("Do you want to use the medkit?(yes/no)") # asks for player input to use medkit
 
         if use == "yes":
-            if player_class == "Medic"
+            if player_class == "Medic":
                 health = health + 60
-            else
+            else:
                 health = health + 30
                 inventory.remove("Medkit")   # removes medkit
                 print("\nYour health increased to ", health)
