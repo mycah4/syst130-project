@@ -20,8 +20,10 @@ while True: # while true helps with user input validation
                 print("\nPlease choose an option. ")
         
         except ValueError: 
-            print("\nInvalid response, please enter a number")
-        
+            print("\nInvalid response, please enter a number")  # makes sure data type is correct
+            
+    break
+    
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
@@ -63,7 +65,7 @@ def create_player():
                 print("\nPlease choose a response")
 
         except ValueError:
-            print("\nInvalid response, please enter a number. ")
+            print("\nInvalid response, please enter a number. ") # makes sure data type is correct
             continue
     
         break
@@ -129,7 +131,7 @@ def location1_hangarbay():
                 print("\nPlease choose an option")
 
         except ValueError:
-            print("\nInvalid response, please enter a number")
+            print("\nInvalid response, please enter a number") # makes sure data type is correct
             continue
 
         
@@ -158,7 +160,7 @@ def select_path():
                 print("\nPlease choose 1, 2, or 3")
 
         except ValueError:
-            print("\nInvalid response, please enter a number")
+            print("\nInvalid response, please enter a number") # makes sure data type is correct
             continue
     
 # _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
