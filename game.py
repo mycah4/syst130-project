@@ -24,16 +24,15 @@ while True: # while true helps with user input validation
             
     break
     
-# ____________________________________________________________________  # STARTER STATS
-story_level = 1     # global variables
+# ____________________________________________________________________  # STARTER STATS    
+# global variables
 health = 100
 inventory = []
 player_name = ""
 player_class = ""
 # _____________________________________________________________________   # PLAYER CREATION
 
-def show_stats():
-    print("\nStory Level:", story_level)    # function to display stats
+def show_stats():    # function to display stats
     print("\nHealth:", health)
     print("\nInventory:", inventory)
 
@@ -192,7 +191,7 @@ def location2_bridge():
     else:
         print("\nYou got the answer wrong, the Captain's Hologram shocks you")  # damages you for wrong answer
         health = health - 15
-        print(health)
+        print("\nHealth: ", health)
 
 
         while True:
