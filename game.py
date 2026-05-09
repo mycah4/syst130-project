@@ -49,7 +49,7 @@ def load_game(): # loads game and checks if it has been tampered
         return False
 
     try:
-        with open("savegame.json", r) as f: # reads save file
+        with open("savegame.json", "r") as f: # reads save file
             save_data = json.load(f)
 
         stored_hash = save_data["hash"]  # grabs the stored hash and game data
@@ -80,7 +80,7 @@ def load_game(): # loads game and checks if it has been tampered
 
     except json.JSONDecodeError: # if json error starts a new game
         print("Save file error. Starting a new game")
-        return false
+        return False
 
 
  
