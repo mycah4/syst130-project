@@ -389,19 +389,19 @@ def start_game():
 
         if not location2_bridge():
             print("\nGame over... failed bridge puzzle")
-            return
+            return 1
 
     elif path == 2:
         print("\nYou take the path to the medical bay...")
         if not location3_medicalbay():
             print("\nGame over.. Medical Bay was a trap!")
-            return
+            return 2
 
     elif path == 3:
         print("\nYou take the path to the engine room...")
         if not location4_engineroom():
             print("\nGame over... the engine room exploded") 
-            return
+            return 3
 
     print("\nThe speaker: SELF DESTRUCTION IN 60 SECONDS!") 
     location5_escapepodbay()
