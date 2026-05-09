@@ -307,7 +307,7 @@ def location4_engineroom():
                 if "Conductive_Rod" in inventory:                # looks for rod to seal the vent
                     print("\nTakeda uses the rod to seal the vent!")
                           
-                else
+                else:
                     health = health - 25             #-25 from gas
                     print("\nTakeda is too slow and you take damage. Health:", health)
                 
