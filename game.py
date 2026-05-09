@@ -346,17 +346,21 @@ def location5_escapepodbay():
             if "Captain_Keycard" in inventory and "Launch_Code" in inventory:
                 print("\n Computer: Keycard detected. Launch code accepted.")   # best ending if player has keycard and launch code
                 print("\n Best Ending! You escaped successfully")
+                return True
 
+
+            
             elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:  # second best ending if player has one or the other
                 print("\nComputer: Missing authorization. Launch requires both keycard")
                 print("\nThe alarms get louder. The ship explodes")
                 print("\nAverage Ending! You made it to the end but didn't escape....")
-
+                return False
+                
             else:
                 print("\nComputer: No authorization detected. Launch denied")  # worst ending, if player doesn't have either
                 print("\nThe ship explodes. You don't escape")
                 print("\nThe worst ending! You didn't have any authorization")
-
+                return False
     
 # _____________________________________________________________________  # MAIN GAME
          
