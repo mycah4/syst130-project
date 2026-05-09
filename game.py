@@ -27,8 +27,8 @@ def save_game():       # save game with JSON and SHA256 hash for temper detectio
     game_data = {             # dictionary for game data
         "health": health,
         "inventory": inventory,
-        "player_name": player_name
-        "player_class": player_class
+        "player_name": player_name,
+        "player_class": player_class,
         }
 
     
