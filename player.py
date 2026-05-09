@@ -1,5 +1,4 @@
-from audit
-import create_audit_log
+from audit import create_audit_log
 
 # ____________________________________________________________________  # STARTER STATS    
 health = 100
