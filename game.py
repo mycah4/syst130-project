@@ -392,13 +392,13 @@ def start_game():
     elif path == 3:
         print("\nYou take the path to the engine room..."
         if not location4_engineroom():
-            print("\nGame over... the engine room exploded" 
+            print("\nGame over... the engine room exploded") 
             return
 
     print("\nThe speaker: SELF DESTRUCTION IN 60 SECONDS!") 
     location5_escapepodbay()
 
-    print("\nYour final stats!") # prints final stats
+    print("\nYour final stats! ") # prints final stats
     show_stats()
 
 # _____________________________________________________________________  # function          
