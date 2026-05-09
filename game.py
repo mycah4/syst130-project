@@ -70,7 +70,7 @@ def create_player():
     
         break
 
-    print("\nWelcome, " + player_name + " the " + "!")   # welcomes player with name and class
+    print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY LOCATION
 
