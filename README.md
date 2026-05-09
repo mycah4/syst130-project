@@ -155,6 +155,7 @@ Security benefit: Prevents players from cheating by editing health or inventory 
 ## File Structure
 
 syst130-project/
+
 ├── game.py          # Main game loop and menu
 
 ├── player.py        # Player stats and creation
