@@ -266,7 +266,7 @@ def location3_medicalbay():
 # _____________________________________________________________________ # FOURTH STORY LOCATION (path 3)
 
 def location4_engineroom():
-    global health, inventory, 
+    global health, inventory 
     
     print("\nYou are now in location 4, the engine room") # storyline, path 3
     print("\nThe engine room is overheating. Alarms blare. Coolant leaks everywhere.")                    
