@@ -12,9 +12,75 @@ def create_audit_log(event_type, details):
 with open("audit_log.txt", "a") as log_file:
     log_file.write(f"[{timestamp}] {event_type}: {details}\n")
 
-# ____________________________________________________________________  # SAVE/LOAD WITH TAMPER CHECK
+# ____________________________________________________________________  # SAVE & LOAD WITH TAMPER CHECK
     
+def save_game():       # save game with JSON and SHA256 hash for temper detection
 
+
+    game_data = {             # dictionary for game data
+        "health": health,
+        "inventory": inventory,
+        "player_name": player_name
+        "player_class": player_class
+        }
+
+    
+    json.data = json.dumps(game_data) # makes dictionary into a JSON string
+
+    game_hash = hashlib.sha256(json_data.encode())).hexdigest()  # creates sha256 of json string
+
+    with open("savegame.json", "w") as f:
+        json.dump({"hash": game_hash, "data": game_data}, f, indent=2) # saves hash and json to a file
+
+    print("Game saved with tamper protection")
+
+def load_game(): # loads game and checks if it has been tampered
+    global health, inventory, player_name, player_class
+
+    if not os.path.exists("savegame.json"): # checks if save file exists
+        print("\nNo save file found. Starting new game.")
+        return False
+
+    try:
+        with open("savegame.json", r) as f: # reads save file
+            save_data = json.load(f)
+
+        stored_hash = save_data["hash"]  # grabs the stored hash and game data
+        game_data = save_data["data"]
+
+        json_data = json.dumps(game_data) #recalculates hash from the game data
+        calculated_hash = hashlib.sha256(json_data.enconde()).hexdgest()
+
+        if stored_hash != calculated_hash:  # if stored hash doesn't equal the new hash, file has been tampered
+            print("\nFile has been tampered!")
+            print("\nYour save file has been modified")
+            print("\nYour safe file is rejected for security reasons")
+            print("\nStarting a new game instead.")
+            return False
+
+        health = game_data["health"]
+        inventory = game_data["inventory"]
+        player_name = game_data["player_name"]
+        player_class = game_data["player_class"]
+
+        print("\nGame loaded successfully") # not tampered
+        print("\nNo tampering detected!")
+        return True
+
+    except FileNotFoundError: # if no file found starts a new game
+        print("No save file found. Starting a new game.")
+        return False
+
+    except json.JSONDecopdeError: # if json error starts a new game
+        print("Save file error. Starting a new game")
+        return false
+
+    except 
+
+    
+        
+    
+    
 
 
 
