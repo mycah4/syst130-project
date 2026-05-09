@@ -45,7 +45,7 @@ def create_player():
     print("\nChoose your class!") # chooses player class
     print("\n1. Soldier (+30 health)")
     print("\n2. Engineer (Auto-solves puzzles)")
-    print("\n3. Medic (Gain health after every fight)")
+    print("\n3. Medic (Medkit heals more)")
     
     while True:
         try:
@@ -185,13 +185,14 @@ def location2_bridge():
         print("\nCorrect. Take the Keycard and my launch code '734'")
         inventory.append("Keycard")
         inventory.append("Launch_Code")
-        print("You received the captain's Keycard and the launch code!")
+        print("You received the Captain's Keycard and the launch code!")
         return True
 
     
     else:
         print("\nYou got the answer wrong, the Captain's Hologram shocks you")  # damages you for wrong answer
         health = health - 15
+        print(health)
 
 
         while True:
