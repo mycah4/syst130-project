@@ -1,508 +1,58 @@
-import hashlib
-import json
-import os
-from datetime import datetime
-
-# ____________________________________________________________________  # STARTER STATS    
-# global variables
-health = 100
-inventory = []
-player_name = ""
-player_class = ""
-
-
-# ____________________________________________________________________    # AUDIT LOGGING
-
-def create_audit_log(event_type, details, timestamp):
-    timestamp = datatime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    with open("audit_log.txt", "a") as log_file:
-        log_file.write(f"[{timestamp}] {event_type}: {details}\n")
-
-# ____________________________________________________________________  # SAVE & LOAD WITH TAMPER CHECK
-    
-def save_game():       # save game with JSON and SHA256 hash for temper detection
-
-
-    game_data = {             # dictionary for game data
-        "health": health,
-        "inventory": inventory,
-        "player_name": player_name,
-        "player_class": player_class,
-        }
-
-    
-    json_data = json.dumps(game_data) # makes dictionary into a JSON string
-
-    game_hash = hashlib.sha256(json_data.encode()).hexdigest()  # creates sha256 of json string
-
-    with open("savegame.json", "w") as f:
-        json.dump({"hash": game_hash, "data": game_data}, f, indent=2) # saves hash and json to a file
-
-    print("Game saved with tamper protection")
-
-def load_game(): # loads game and checks if it has been tampered
-    global health, inventory, player_name, player_class
-
-    if not os.path.exists("savegame.json"): # checks if save file exists
-        print("\nNo save file found. Starting new game.")
-        return False
-
-    try:
-        with open("savegame.json", "r") as f: # reads save file
-            save_data = json.load(f)
-
-        stored_hash = save_data["hash"]  # grabs the stored hash and game data
-        game_data = save_data["data"]
-
-        json_data = json.dumps(game_data) #recalculates hash from the game data
-        calculated_hash = hashlib.sha256(json_data.encode()).hexdigest()
-
-        if stored_hash != calculated_hash:  # if stored hash doesn't equal the new hash, file has been tampered
-            print("\nFile has been tampered!")
-            print("\nYour save file has been modified")
-            print("\nYour safe file is rejected for security reasons")
-            print("\nStarting a new game instead.")
-            return False
-
-        health = game_data["health"]
-        inventory = game_data["inventory"]
-        player_name = game_data["player_name"]
-        player_class = game_data["player_class"]
-
-        print("\nGame loaded successfully") # not tampered
-        print("\nNo tampering detected!")
-        return True
-
-    except FileNotFoundError: # if no file found starts a new game
-        print("No save file found. Starting a new game.")
-        return False
-
-    except json.JSONDecodeError: # if json error starts a new game
-        print("Save file error. Starting a new game")
-        return False
-
-
- 
-# ____________________________________________________________________    # MAIN MENU
-while True: # while true helps with user input validation
-    print("Main Menu")      # main menu prompt 
-    print("\n1. Start Game")
-    print("2. Exit game")
-
-    while True:  
-        try:
-            user_choice = int(input("\nChoose: "))
-
-            if user_choice == 1:
-                print("\nGame starting!")         # allows user to either leave or start game
-                break
-    
-            elif user_choice == 2:
-                print("\nSee you next time! ")
-                exit()
-    
-            else:
-                print("\nPlease choose an option. ")
-        
-        except ValueError: 
-            print("\nInvalid response, please enter a number")  # makes sure data type is correct
-            
-    break
-    
-# _____________________________________________________________________   # HEALTH CHECK
-def check_death(): # checks if player health is 0
-    global health
-    
-    if health <= 0:
-        print("You have died...")
-        exit()
-    
-
-# _____________________________________________________________________   # PLAYER CREATION
-
-def show_stats():    # function to display stats
-    print("\nHealth:", health)
-    print("\nInventory:", inventory)
-
-def create_player():
-    global player_name, player_class, health   # function for character creation
-
-    player_name = input("\nChoose a name for your character: ") # gets player name
-
-    print("\nChoose your class!") # chooses player class
-    print("\n1. Soldier (+30 health)")
-    print("\n2. Engineer (Auto-solves puzzles)")
-    print("\n3. Medic (Medkit heals more)")
-    
-    while True:
-        try:
-            user_choice = int(input("\nChoose (1-3): "))
-
-            if user_choice == 1:
-                player_class = "Soldier"
-                health = health + 30
-        
-            elif user_choice == 2:
-                player_class = "Engineer"
-        
-            elif user_choice == 3:
-                player_class = "Medic"
-
-            else:
-                print("\nPlease choose a response")
-
-        except ValueError:
-            print("\nInvalid response, please enter a number. ") # makes sure data type is correct
-            continue
-    
-        break
-
-    print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
-
-# _____________________________________________________________________   # FIRST STORY LOCATION
-
-def location1_hangarbay():
-    global health, inventory
-
-    print("\nYou spawn in location 1, Hangar Bay.")
-    print("\nThe ship's hangar is smoky and dark. Emergency lights flicker.")
-    print("\nAn escape pod sits in the distance, but the door is locked.")
-
-    print("\nYou go to the escape pod. ")
-    print("\nYour crewmate asks for a favor: Help me clean the trash. ")
-
-    while True:
-            user_choice = input("Help him? (yes/no): ")   # asks for player's choice
-
-            if user_choice == "yes":
-                print("\nHe gives you an unknown key ")      # adds key to inventory
-                inventory.append("Mysterious_Key")
-                break
-                
-            elif user_choice == "no":
-                print("\nYou ignore him, and continue by yourself ")
-
-                break
-                
-            else:
-                print("\nPlease answer yes or no")
-
-
-
-    print("\nA fire blocks your path! ")
-    print("\n1. Run through and risk taking damage ")      # pick between two different choices
-    print("\n2. Find another method ")
-
-
-
-    
-    while True:
-        try:
-            user_choice2 = int(input("\nChoose (1-2): "))
-            
-            if user_choice2 == 1:
-                health = health - 20
-                print("\nYou took 20 damage... Health: " , health)  # lowers player's health
-                check_death()
-                break
-
-            
-            elif user_choice2 == 2:
-                if "Mysterious_Key" in inventory:
-                    print("\nYou open an unknown door and escape the pod!! ")
-                    break
-                    
-                else:
-                    print("\nYou are trapped...you died")
-                    exit()
-            else:
-                print("\nPlease choose an option")
-
-        except ValueError:
-            print("\nInvalid response, please enter a number") # makes sure data type is correct
-            continue
-
-        
-# _____________________________________________________________________ # PATH SELECTING
-
-def select_path():
-    print("\nYou see a corridor that splits into three seperate directions!")  # function to pick between three paths
-    print("\n1. Go to the bridge (Hack the main computer)")
-    print("\n2. Go to the medical bay (Find an unknown person with a special Keycard)")
-    print("\n3. Go to the engine room (Help the engineer!)")
-
-    while True:
-        try: 
-            user_choice = int(input("\nChoose a path (1-3): ")) # grabs input
-
-            if user_choice == 1:
-                return 1
-
-            elif user_choice == 2:
-                return 2
-
-            elif user_choice == 3:
-                return 3
-                
-            else:
-                print("\nPlease choose 1, 2, or 3")
-
-        except ValueError:
-            print("\nInvalid response, please enter a number") # makes sure data type is correct
-            continue
-    
-# _____________________________________________________________________ # SECOND STORY LOCATION (path 1)
-    
-def location2_bridge():
-    global health, inventory
-
-
-    print("\nYou are now in location 2, the Bridge.")
-    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline, path 1, npc 1
-    print("\nCaptain Voss is slumped over her terminal. A hologram flickers to life.")
-    print("\nThe captain's hologram appears, 'I've locked the escape. Solve my riddle first!'")
-
-    print("\nChallenge #1... the Captain's riddle")    #storyline, challenge 1
-    print("\nWhat has keys but no locks?")
-    print("\nHas space but no room?")
-    print("\nHas a face but no eyes?")
-
-    answer = input("\nYour answer?: ")  # asks player for input to answer the puzzle
-
-    if answer == "keyboard" or answer == "a keyboard":  # if correct answer you receive two different items
-        print("\nCorrect. Take the Keycard and my launch code '734'")
-        inventory.append("Keycard")
-        inventory.append("Launch_Code")
-        print("You received the Captain's Keycard and the launch code!")
-        return True
-
-    
-    else:
-        print("\nYou got the answer wrong, the Captain's Hologram shocks you")  # damages you for wrong answer
-        health = health - 15
-        check_death()
-        print("\nHealth: ", health)
-
-
-        while True:
-            anotherchance = input("\nTry again? (yes/no): ") # player rceives another chance
-            
-
-            if anotherchance == "yes":
-                print("\nThis is your last try, I have a head and a tail")
-                answer2 = input("What am I?")
-                
-                if answer2 == "coin" or answer2 == "a coin":            # receives two different item
-                    print("Take my Keycard and launch code")
-                    inventory.append("Keycard")
-                    inventory.append("Launch_Code")
-                    return True               
-
-                else:
-                    print("You failed, the bridge is locking down")       # failed to answer the question correctly
-                    return False
-
-            elif anotherchance == "no":   # player escapes with nothing
-                print("\nYou leave the bridge with nothing...")
-                return False
-        
-            else:
-                print("\nPlease answer yes or no")
-        
-
-
-# _____________________________________________________________________ # THIRD STORY LOCATION (path 2)
-
-def location3_medicalbay():
-    global health, inventory, player_name 
-
-
-    print("\nYou are now in location 3, the Medical Bay") # storyline, path 2, npc 2
-    print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
-    print("\nA doctor waves you over frantically")
-    print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
-    inventory.append("Medkit")
-
-    print("You gained a medkit! It gives +30 health when used. Double if you are a medic.")
-
-    while True:
-        use = input("Do you want to use the medkit?(yes/no)") # asks for player input to use medkit
-
-        if use == "yes":
-            if player_class == "Medic":
-                health = health + 60
-            else:
-                health = health + 30
-            inventory.remove("Medkit")   # removes medkit
-            print("\nYour health increased to ", health)
-            break
-
-        elif use == "no":
-            print("\nYou decided to save it for later") # stays in inventory
-            break
-
-        else:
-            print("\nPlease answer yes or no")
-
-    print("\nAn unknown figure approaches you")  # storyline
-    print("\nHello, I am Ensign Riley... The captain left her Keycard behind on the bridge. I'm injured, can you find it?")
-    print("\nBefore you leave, this might be important to you!")
-    print("\nHe gives you the launch code.")
-
-    if "Launch_Code" not in inventory:  # checks if launch code previously exists, if not you receive it
-        inventory.append("Launch_Code") 
-
-    print("\nYou search the bodies. You find a Keycard!") 
-    if "Keycard" not in inventory: # checks if the Keycard previously exists, if not you receive it
-        inventory.append("Keycard")
-
-    print("\nThe medical bay cleared, you have what you need.")
-    return True
-    
-# _____________________________________________________________________ # FOURTH STORY LOCATION (path 3)
-
-def location4_engineroom():
-    global health, inventory 
-    
-    print("\nYou are now in location 4, the engine room") # storyline, path 3, npc 3
-    print("\nThe engine room is overheating. Alarms blare. Coolant leaks everywhere.")                    
-    print("\nEngineer Takeda shouts: The reactor is melting!")
-    print("\nEngineer Takeda says: I need a conductive metal... Do you have any?") 
-
-    if "Mysterious_Key" in inventory:   # checks for key
-        print("\nYou show Takeda the Mysterious Key")
-        print("\nHe gracefully accepts it and melts it into a conductive rod")
-        inventory.remove("Mysterious_Key")    # removes key, adds rod
-        inventory.append("Conductive_Rod")
-        print("\nYou received a conductive rod!")
-              
-    else:
-        print("\nEngineer Takeda says: You have no key? Unfortunately you'll have to risk the gas vent..")
-
-    print("\nChallenge #2: Gas Vent Explosion") # storyline, challenge 2
-    print("\nYou have three seconds to choose where to hide!")
-
-    print("\n1. Hide behind the coolant tank") 
-    print("\n2. Run through the gas to the exit")
-    print("\n3. Call for Engineer Takeda's help")
-
-    while True:
-        try:
-            choice = int(input("\nChoose (1-3): ")) # user input to pick where to hide
-
-            if choice == 1:
-                print("\nThe coolant tank absorbs the heat! You took no damage!") 
-                break
-
-            elif choice == 2:
-                health = health - 40
-                check_death()
-                print("You run through the gas and take damage. Health: ", health) # -40 health from gas
-                break
-
-            elif choice == 3:
-                if "Conductive_Rod" in inventory:                # looks for rod to seal the vent
-                    print("\nTakeda uses the rod to seal the vent!")
-                          
-                else:
-                    health = health - 25             #-25 from gas
-                    check_death()
-                    print("\nTakeda is too slow and you take damage. Health:", health)
-                
-                break
-
-            else:
-                print("\nPlease choose 1, 2 or 3")
-
-        except ValueError:
-            print("\nInvalid response, please enter a number")
-            continue
-
-    print("\nYou make it through the engine room")
-
-
-    if "Launch_Code" not in inventory:     #checks if launch_code exists, if not adds it
-        print("Takeda says: Here's the launch code, I found it. It's 734.")
-        inventory.append("Launch_Code")
-
-    return True
-    
-
-
-# _____________________________________________________________________ # LAST STORY LOCATION 
-
-
-def location5_escapepodbay():
-    global health, inventory
-    
-    print("\nYou are now in location 5, the Escape Pod Bay")
-    print("\nYou reach the escape pod bay. Only one pod remains.")                   
-    
-    print("\nYou approach the pod's computer.")
-    while True:
-        try:
-            if "Keycard" in inventory and "Launch_Code" in inventory:
-                print("\n Computer: Keycard detected. Launch code accepted.")   # best ending if player has Keycard and launch code
-                print("\n Best Ending! You escaped successfully")
-                return True
-
-
-            
-            elif "Keycard" in inventory or "Launch_Code" in inventory:  # second best ending if player has one or the other
-                print("\nComputer: Missing authorization. Launch requires both Keycard")
-                print("\nThe alarms get louder. The ship explodes")
-                print("\nAverage Ending! You made it to the end but didn't escape....")
-                return False
-                
-            else:
-                print("\nComputer: No authorization detected. Launch denied")  # worst ending, if player doesn't have either
-                print("\nThe ship explodes. You don't escape")
-                print("\nThe worst ending! You didn't have any authorization")
-                return False
-
-        except:
-                print("\nError reading inventory")
-                return False
+import player
+import locations
+from audit iomport create_audit_log
+from save_load import save_game, load_game
     
 # _____________________________________________________________________  # MAIN GAME
          
 def start_game():
-    global health, inventory   
+    print("\nAdventure to escape space!") 
+
+    if saved_data:     # finding and loading saved file
+        player.health = sava_data["health"]
+        player.inventory = saved_data["inventory"] 
+        player.player_name = saved_data["player_name"]
+        player.player_class = saved_data["player_class"]
+        print("\nWelcome back, {player.player_name}!")
+    else:
+        player.create_player()
+
+    player.show_stats()
 
 
-    create_player()    
-    show_stats()
+    locations.location1_hangarbay()
 
-    location1_hangarbay()
+    save_choice = input("\nSave game? (yes/no):  ")
+    if save_choice == "yes":
+        save_game(player.health, player.inventory, player.player_name, player.player_class
 
-    path = select_path()
+    path = locations.select_path()
 
 
     if path == 1:
         print("\n You take the path to the bridge...")
 
-        if not location2_bridge():
+        if not locations.location2_bridge():
             print("\nGame over... failed bridge puzzle")
             return 1
 
     elif path == 2:
         print("\nYou take the path to the medical bay...")
-        if not location3_medicalbay():
+        if not locations.location3_medicalbay():
             print("\nGame over.. Medical Bay was a trap!")
             return 2
 
     elif path == 3:
         print("\nYou take the path to the engine room...")
-        if not location4_engineroom():
+        if not locations.location4_engineroom():
             print("\nGame over... the engine room exploded") 
             return 3
 
     print("\nThe speaker: SELF DESTRUCTION IN 60 SECONDS!") 
-    location5_escapepodbay()
+    locations.location5_escapepodbay()
 
     print("\nYour final stats! ") # prints final stats
-    show_stats()
+    player.show_stats()
 
 # _____________________________________________________________________  # function          
 
