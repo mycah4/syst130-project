@@ -70,7 +70,7 @@ def create_player():
     
         break
 
-    print("\nWelcome, " + player_name + " the " + player_class + "!")   # welcomes player with name and class
+    print("\nWelcome, " + player_name + " the " +  + "!")   # welcomes player with name and class
 
 # _____________________________________________________________________   # FIRST STORY LOCATION
 
@@ -225,7 +225,7 @@ def location2_bridge():
 # _____________________________________________________________________ # THIRD STORY LOCATION (path 2)
 
 def location3_medicalbay():
-    global health, inventory, player_name. player_class
+    global health, inventory, player_name 
 
 
     print("\nYou are now in location 3, the Medical Bay") # storyline, path 2, npc 2
