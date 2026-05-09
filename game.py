@@ -344,29 +344,62 @@ def location5_escapepodbay():
     while True:
         try:
             if "Captain_Keycard" in inventory and "Launch_Code" in inventory:
-                print("\n Computer: Keycard detected. Launch code accepted.")
+                print("\n Computer: Keycard detected. Launch code accepted.")   # best ending if player has keycard and launch code
                 print("\n Best Ending! You escaped successfully")
 
-            elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:
+            elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:  # second best ending if player has one or the other
                 print("\nComputer: Missing authorization. Launch requires both keycard")
                 print("\nThe alarms get louder. The ship explodes")
                 print("\nAverage Ending! You made it to the end but didn't escape....")
 
             else:
-                print("\nComputer: No authorization detected. Launch denied")
+                print("\nComputer: No authorization detected. Launch denied")  # worst ending, if player doesn't have either
                 print("\nThe ship explodes. You don't escape")
                 print("\nThe worst ending! You didn't have any authorization")
 
     
-# _____________________________________________________________________  # function testing
+# _____________________________________________________________________  # MAIN GAME
          
-create_player()
-
-show_stats()
-
-location1_hangerbay()
+def start_game():
+    global health, inventory   
 
 
+    create_player()    
+    show_stats()
+
+    location1_hangarbay()
+
+    path = choose_path()
+
+
+    if path == 1:
+        print("\n You take the path to the bridge..."
+
+        if not location2_bridge():
+            print("\nGame over... failed bridge puzzle")
+            return
+
+    elif path == 2:
+        print(\n"You take the path to the medical bay...")
+        if not location3_medicalbay():
+            print("\nGame over.. Medical Bay was a trap!")
+            return
+
+    elif path == 3:
+        print(\n"You take the path to the engine room..."
+        if not location4_engineroom():
+            print("\nGame over... the engine room exploded" 
+            return
+
+    print("\nThe speaker: SELF DESTRUCTION IN 60 SECONDS!") 
+    location5_escapepodbay()
+
+    print(\n"Your final stats!") # prints final stats
+    show_stats()
+
+# _____________________________________________________________________  # function          
+
+start_game()
 
     
 
