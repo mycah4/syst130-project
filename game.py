@@ -27,7 +27,7 @@ def save_game():       # save game with JSON and SHA256 hash for temper detectio
     
     json.data = json.dumps(game_data) # makes dictionary into a JSON string
 
-    game_hash = hashlib.sha256(json_data.encode())).hexdigest()  # creates sha256 of json string
+    game_hash = hashlib.sha256(json_data.encode()).hexdigest()  # creates sha256 of json string
 
     with open("savegame.json", "w") as f:
         json.dump({"hash": game_hash, "data": game_data}, f, indent=2) # saves hash and json to a file
