@@ -73,10 +73,10 @@ def create_player():
 
 # _____________________________________________________________________   # FIRST STORY LOCATION
 
-def location1_hangerbay():
+def location1_hangarbay():
     global health, inventory
 
-    print("\nYou spawn in location 1, Hanger Bay.")
+    print("\nYou spawn in location 1, Hangar Bay.")
     print("\nThe ship's hangar is smoky and dark. Emergency lights flicker.")
     print("\nAn escape pod sits in the distance, but the door is locked.")
 
