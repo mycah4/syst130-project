@@ -281,7 +281,7 @@ def location4_engineroom():
         print("\nYou received a conductive rod!")
               
     else:
-        print("\Engineer Takeda says: You have no key? Unfortunately you'll have to risk the gas vent..")
+        print("\nEngineer Takeda says: You have no key? Unfortunately you'll have to risk the gas vent..")
 
     print("\nChallenge #2: Gas Vent Explosion") # storyline, challenge 2
     print("\nYou have three seconds to choose where to hide!")
