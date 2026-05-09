@@ -254,9 +254,9 @@ def location3_medicalbay():
                 health = health + 60
             else:
                 health = health + 30
-        inventory.remove("Medkit")   # removes medkit
-        print("\nYour health increased to ", health)
-        break
+            inventory.remove("Medkit")   # removes medkit
+            print("\nYour health increased to ", health)
+            break
 
         elif use == "no":
             print("\nYou decided to save it for later") # stays in inventory
