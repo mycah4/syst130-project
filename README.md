@@ -1,4 +1,4 @@
-# Adventure to Space Game by Mycah Eccles|
+# Adventure to Space Game by Mycah Eccles
 
 
 ## How to run the game
