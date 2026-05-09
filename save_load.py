@@ -19,10 +19,10 @@ def save_game(health, inventory, player_name, player_class):       # save game w
     game_hash = hashlib.sha256(json_data.encode()).hexdigest()  # creates sha256 of json string
 
     with open("savegame.json", "w") as f:
-        json.dump({"hash": game_hash, "data": game_data}, f, indent=2}) # saves hash and json to a file
+        json.dump({"hash": game_hash, "data": game_data}, f, indent=2) # saves hash and json to a file
 
     print("Game saved with tamper protection")
-    create_audit_log("SAVE", f"Game saved. Health: {health")
+    create_audit_log("SAVE", f"Game saved. Health: {health}")
 
 def load_game(): # loads game and checks if it has been tampered
 
