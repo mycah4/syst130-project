@@ -335,7 +335,7 @@ def location4_engineroom():
 
 
 def location5_escapepodbay():
-    global health,. inventory
+    global health, inventory
 
     
 
