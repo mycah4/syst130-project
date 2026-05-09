@@ -20,10 +20,7 @@ while True: # while true helps with user input validation
                 print("\nPlease choose an option. ")
         
         except ValueError: 
-            print("\nInvalid response, please enter a number") 
-            continue
-            
-        break
+            print("\nInvalid response, please enter a number")
         
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
@@ -242,7 +239,7 @@ def location3_medicalbay():
         if use == "yes":
             health = health + 30
             inventory.remove("Medkit")   # removes medkit
-            print("\nYou're health increased to ", health)
+            print("\nYour health increased to ", health)
             break
 
         elif use == "no":
@@ -291,7 +288,7 @@ def location4_engineroom():
     print("\nYou have three seconds to choose where to hide!")
 
     print("\n1. Hide behind the coolant tank") 
-    print("\n2. Run through the gas to the exist")
+    print("\n2. Run through the gas to the exit")
     print("\n3. Call for Engineer Takeda's help")
 
     while True:
@@ -299,7 +296,7 @@ def location4_engineroom():
             choice = int(input("\nChoose (1-3): ")) # user input to pick where to hide
 
             if choice == 1:
-                print("\n The coolant tank absorbs the heat! You took no damage!") 
+                print("\nThe coolant tank absorbs the heat! You took no damage!") 
                 break
 
             elif choice == 2:
@@ -364,7 +361,7 @@ def location5_escapepodbay():
                 print("\nComputer: No authorization detected. Launch denied")  # worst ending, if player doesn't have either
                 print("\nThe ship explodes. You don't escape")
                 print("\nThe worst ending! You didn't have any authorization")
-                return False\
+                return False
 
         except:
                 print("\nError reading inventory")
