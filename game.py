@@ -225,7 +225,7 @@ def location2_bridge():
 # _____________________________________________________________________ # THIRD STORY LOCATION (path 2)
 
 def location3_medicalbay():
-    global health, inventory, player_name
+    global health, inventory, player_name. player_class
 
 
     print("\nYou are now in location 3, the Medical Bay") # storyline, path 2, npc 2
@@ -234,16 +234,19 @@ def location3_medicalbay():
     print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
     inventory.append("Medkit")
 
-    print("You gained a medkit! It gives +30 health when used.")
+    print("You gained a medkit! It gives +30 health when used. Double if you are a medic.")
 
     while True:
         use = input("Do you want to use the medkit?(yes/no)") # asks for player input to use medkit
 
         if use == "yes":
-            health = health + 30
-            inventory.remove("Medkit")   # removes medkit
-            print("\nYour health increased to ", health)
-            break
+            if player_class == "Medic"
+                health = health + 60
+            else
+                health = health + 30
+                inventory.remove("Medkit")   # removes medkit
+                print("\nYour health increased to ", health)
+                break
 
         elif use == "no":
             print("\nYou decided to save it for later") # stays in inventory
