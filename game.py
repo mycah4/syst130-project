@@ -394,7 +394,7 @@ def start_game():
             return
 
     elif path == 3:
-        print("\nYou take the path to the engine room..."
+        print("\nYou take the path to the engine room...")
         if not location4_engineroom():
             print("\nGame over... the engine room exploded") 
             return
