@@ -169,11 +169,11 @@ def location2_bridge():
 
 
     print("\nYou are now in location 2, the Bridge.")
-    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline
+    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline, path 1
     print("\nCaptain Voss is slumped over her terminal. A hologram flickers to life.")
     print("\nThe captain's hologram appears, 'I've locked the escape. Solve my riddle first!'")
 
-    print("\nChallenge #1... the Captain's riddle")
+    print("\nChallenge #1... the Captain's riddle")    #storyline, challenge 1
     print("\nWhat has keys but no locks?")
     print("\nHas space but no room?")
     print("\nHas a face but no eyes?")
@@ -226,7 +226,7 @@ def location3_medicalbay():
     global health, inventory, player_name
 
 
-    print("\nYou are now in location 3, the Medical Bay") # storyline
+    print("\nYou are now in location 3, the Medical Bay") # storyline, path 2
     print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
     print("\nA doctor waves you over frantically")
     print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
@@ -251,7 +251,7 @@ def location3_medicalbay():
     print("\nAn unknown figure approaches you")  # storyline
     print("\nHello, I am Ensign Riley... The captain left her keycard behind on the bridge. I'm injured, can you find it?")
     print("\nBefore you leave this might be important to you!")
-    print("He gives you the launch code.")
+    print("\nHe gives you the launch code.")
 
     if "Launch_Code" not in inventory:  # checks if launch code previously exists, if not you receive it
         inventory.append("Launch_Code") 
@@ -265,16 +265,84 @@ def location3_medicalbay():
     
 # _____________________________________________________________________ # FOURTH STORY LOCATION (path 3)
 
-def location3_medicalbay():
-    global health, inventory, player_name
+def location4_engineroom():
+    global health, inventory, 
+    
+    print("\nYou are now in location 4, the engine room") # storyline, path 3
+    print("\nThe engine room is overheating. Alarms blare. Coolant leaks everywhere.")                    
+    print("\nEngineer Takeda shouts: The reactor is melting!")
+    print("\nEngineer Takeda says: I need a conductive metal... Do you have any?") 
+
+    if "Mysterious_Key" in inventory:   # checks for key
+        print("\nYou show Takeda the Mysterious Key")
+        print("\He gracefully accepts it and melts it into a conductive rod
+        inventory.remove("Mysterious_Key")    # removes key, adds rod
+        inventory.append("Conductive_Rod")
+        print("\nYou received a conductive rod!")
+              
+    else:
+        print("\Engineer Takeda says: You have no key? Unfortunately you'll have to risk the gas vent..")
+
+    print("\nChallenge #2: Gas Vent Explosion") # storyline, challenge 2
+    print("\nYou have three seconds to choose where to hide!")
+
+    print("\n1. Hide behind the cooplant tank") 
+    print("\n2. Run through the gas to the exist")
+    print("\n3. Call for Engineer Takeda's help")
+
+    while True:
+        try:
+            choice = int(input("\nChoose (1-3): ")) # user input to pick where to hide
+
+            if choice == 1:
+                print("\n The coolant tank absorbs the heat! You took no damage!") 
+                break
+
+            elif choice == 2:
+                health = health - 40
+                print("You run through the gas and take damage. Health: ", health) # -40 health from gas
+                break
+
+            elif choice == 3:
+                if "Conductive_Rod" in inventory                # looks for rod to seal the vent
+                    print("\nTakeda uses the rod to seal the vent!" 
+                          
+                else
+                    health = health - 25             #-25 from gas
+                    print("\nTakeda is too slow and you take damage. Health:", health)
+                
+                break
+
+            else:
+                print("\nPlease choose 1, 2 or 3")
+
+        except ValueError:
+            print("\nInvalid response, please enter a number")
+            continue
+
+    print("\nYou make it through the engine room")
 
 
-    print("\nYou are now in location 3, the Medical Bay") # storyline
-    print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
-    print("\nA doctor waves you over frantically")
-    print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
+    if "Launch_Code" not in inventory:     #checks if launch_code exists, if not adds it
+        print("Takeda says: Here's the launch code I found it. It's 734.")
+        inventory.append("Launch_Code")\
+
+    return True
+    
+
 
 # _____________________________________________________________________ # LAST STORY LOCATION 
+
+
+def location5_escapepodbay():
+    global health,. inventory
+
+    
+
+
+
+
+
 
 # _____________________________________________________________________  # function testing
          
