@@ -169,7 +169,7 @@ def location2_bridge():
 
 
     print("\nYou are now in location 2, the Bridge.")
-    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline, path 1
+    print("\nYou enter the ship's command bridge. Sparks fly from broken consoles.")                    # storyline, path 1, npc 1
     print("\nCaptain Voss is slumped over her terminal. A hologram flickers to life.")
     print("\nThe captain's hologram appears, 'I've locked the escape. Solve my riddle first!'")
 
@@ -226,7 +226,7 @@ def location3_medicalbay():
     global health, inventory, player_name
 
 
-    print("\nYou are now in location 3, the Medical Bay") # storyline, path 2
+    print("\nYou are now in location 3, the Medical Bay") # storyline, path 2, npc 2
     print("\nThe medical bay is trashed. Injured crew members lie on cots.")                    
     print("\nA doctor waves you over frantically")
     print("\nYou made it out successfully... take this medkit it'll help you!") # player receives medkit
@@ -268,7 +268,7 @@ def location3_medicalbay():
 def location4_engineroom():
     global health, inventory 
     
-    print("\nYou are now in location 4, the engine room") # storyline, path 3
+    print("\nYou are now in location 4, the engine room") # storyline, path 3, npc 3
     print("\nThe engine room is overheating. Alarms blare. Coolant leaks everywhere.")                    
     print("\nEngineer Takeda shouts: The reactor is melting!")
     print("\nEngineer Takeda says: I need a conductive metal... Do you have any?") 
@@ -336,14 +336,28 @@ def location4_engineroom():
 
 def location5_escapepodbay():
     global health, inventory
+    
+    print("\nYou are now in location 5, the Escape Pod Bay")
+    print("\nYou reach the escape pod bay. Only one pod remains.")                   
+    
+    print("\nYou approach the pod's computer.")
+    while True:
+        try:
+            if "Captain_Keycard" in inventory and "Launch_Code" in inventory:
+                print("\n Computer: Keycard detected. Launch code accepted.")
+            print("\n Best Ending! You escaped successfully")
+
+            elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:
+                print("\nComputer: Missing authorization. Launch requires both keycard")
+                print("\nThe alarms get louder. The ship explodes")
+                print("\nAverage Ending! You made it to the end but didn't escape...."
+
+            else:
+                print("\nComputer: No authorization detected. Launch denied")
+                print("\nThe ship explodes. You don't escape")
+                print("\nThe worst ending! You didn't have any authorization")
 
     
-
-
-
-
-
-
 # _____________________________________________________________________  # function testing
          
 create_player()
