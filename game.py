@@ -3,6 +3,13 @@ import json
 import os
 from datetime import datetime
 
+# ____________________________________________________________________  # STARTER STATS    
+# global variables
+health = 100
+inventory = []
+player_name = ""
+player_class = ""
+
 
 # ____________________________________________________________________    # AUDIT LOGGING
 
@@ -120,12 +127,6 @@ while True: # while true helps with user input validation
             
     break
     
-# ____________________________________________________________________  # STARTER STATS    
-# global variables
-health = 100
-inventory = []
-player_name = ""
-player_class = ""
 # _____________________________________________________________________   # HEALTH CHECK
 def check_death(): # checks if player health is 0
     global health
