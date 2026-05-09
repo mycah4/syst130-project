@@ -205,7 +205,7 @@ def location2_bridge():
                     print("Take my keycard and launch code")
                     inventory.append("Keycard")
                     inventory.append("Launch_Code")
-                    return true               
+                    return True               
 
                 else:
                     print("You failed, the bridge is locking down")       # failed to answer the question correctly
