@@ -56,7 +56,7 @@ def load_game(): # loads game and checks if it has been tampered
         game_data = save_data["data"]
 
         json_data = json.dumps(game_data) #recalculates hash from the game data
-        calculated_hash = hashlib.sha256(json_data.enconde()).hexdgest()
+        calculated_hash = hashlib.sha256(json_data.encode()).hexdigest()
 
         if stored_hash != calculated_hash:  # if stored hash doesn't equal the new hash, file has been tampered
             print("\nFile has been tampered!")
