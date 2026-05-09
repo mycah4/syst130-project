@@ -78,29 +78,12 @@ def load_game(): # loads game and checks if it has been tampered
         print("No save file found. Starting a new game.")
         return False
 
-    except json.JSONDecopdeError: # if json error starts a new game
+    except json.JSONDecodeError: # if json error starts a new game
         print("Save file error. Starting a new game")
         return false
 
-    except 
 
-    
-        
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 # ____________________________________________________________________    # MAIN MENU
 while True: # while true helps with user input validation
     print("Main Menu")      # main menu prompt 
