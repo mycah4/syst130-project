@@ -350,7 +350,7 @@ def location5_escapepodbay():
             elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:
                 print("\nComputer: Missing authorization. Launch requires both keycard")
                 print("\nThe alarms get louder. The ship explodes")
-                print("\nAverage Ending! You made it to the end but didn't escape...."
+                print("\nAverage Ending! You made it to the end but didn't escape....")
 
             else:
                 print("\nComputer: No authorization detected. Launch denied")
