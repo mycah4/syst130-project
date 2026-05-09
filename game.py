@@ -275,7 +275,7 @@ def location4_engineroom():
 
     if "Mysterious_Key" in inventory:   # checks for key
         print("\nYou show Takeda the Mysterious Key")
-        print("\He gracefully accepts it and melts it into a conductive rod
+        print("\nHe gracefully accepts it and melts it into a conductive rod
         inventory.remove("Mysterious_Key")    # removes key, adds rod
         inventory.append("Conductive_Rod")
         print("\nYou received a conductive rod!")
