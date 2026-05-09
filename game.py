@@ -345,7 +345,7 @@ def location5_escapepodbay():
         try:
             if "Captain_Keycard" in inventory and "Launch_Code" in inventory:
                 print("\n Computer: Keycard detected. Launch code accepted.")
-            print("\n Best Ending! You escaped successfully")
+                print("\n Best Ending! You escaped successfully")
 
             elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:
                 print("\nComputer: Missing authorization. Launch requires both keycard")
