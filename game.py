@@ -22,7 +22,9 @@ while True: # while true helps with user input validation
         except ValueError: 
             print("\nInvalid response, please enter a number") 
             continue
-    break
+            
+        break
+        
 # ____________________________________________________________________  # STARTER STATS
 story_level = 1     # global variables
 health = 100
@@ -139,7 +141,7 @@ def location1_hangarbay():
 def select_path():
     print("\nYou see a corridor that splits into three seperate directions!")  # function to pick between three paths
     print("\n1. Go to the bridge (Hack the main computer)")
-    print("\n2. Go to the medical bay (Find an unknown person with a special keycard)")
+    print("\n2. Go to the medical bay (Find an unknown person with a special Keycard)")
     print("\n3. Go to the engine room (Help the engineer!)")
 
     while True:
@@ -181,10 +183,10 @@ def location2_bridge():
     answer = input("\nYour answer?: ")  # asks player for input to answer the puzzle
 
     if answer == "keyboard" or answer == "a keyboard":  # if correct answer you receive two different items
-        print("\nCorrect. Take the keycard and my launch code '734'")
+        print("\nCorrect. Take the Keycard and my launch code '734'")
         inventory.append("Keycard")
         inventory.append("Launch_Code")
-        print("You received the captain's keycard and the launch code!")
+        print("You received the captain's Keycard and the launch code!")
         return True
 
     
@@ -202,7 +204,7 @@ def location2_bridge():
                 answer2 = input("What am I?")
                 
                 if answer2 == "coin" or answer2 == "a coin":            # receives two different item
-                    print("Take my keycard and launch code")
+                    print("Take my Keycard and launch code")
                     inventory.append("Keycard")
                     inventory.append("Launch_Code")
                     return True               
@@ -241,24 +243,26 @@ def location3_medicalbay():
             health = health + 30
             inventory.remove("Medkit")   # removes medkit
             print("\nYou're health increased to ", health)
+            break
 
         elif use == "no":
             print("\nYou decided to save it for later") # stays in inventory
+            break
 
         else:
             print("\nPlease answer yes or no")
 
     print("\nAn unknown figure approaches you")  # storyline
-    print("\nHello, I am Ensign Riley... The captain left her keycard behind on the bridge. I'm injured, can you find it?")
-    print("\nBefore you leave this might be important to you!")
+    print("\nHello, I am Ensign Riley... The captain left her Keycard behind on the bridge. I'm injured, can you find it?")
+    print("\nBefore you leave, this might be important to you!")
     print("\nHe gives you the launch code.")
 
     if "Launch_Code" not in inventory:  # checks if launch code previously exists, if not you receive it
         inventory.append("Launch_Code") 
 
-    print("\nYou search the bodies. You find a keycard!") 
-    if "Captain_Keycard" not in inventory: # checks if the keycard previously exists, if not you receive it
-        inventory.append("Captain_Keycard")
+    print("\nYou search the bodies. You find a Keycard!") 
+    if "Keycard" not in inventory: # checks if the Keycard previously exists, if not you receive it
+        inventory.append("Keycard")
 
     print("\nThe medical bay cleared, you have what you need.")
     return True
@@ -286,7 +290,7 @@ def location4_engineroom():
     print("\nChallenge #2: Gas Vent Explosion") # storyline, challenge 2
     print("\nYou have three seconds to choose where to hide!")
 
-    print("\n1. Hide behind the cooplant tank") 
+    print("\n1. Hide behind the coolant tank") 
     print("\n2. Run through the gas to the exist")
     print("\n3. Call for Engineer Takeda's help")
 
@@ -324,8 +328,8 @@ def location4_engineroom():
 
 
     if "Launch_Code" not in inventory:     #checks if launch_code exists, if not adds it
-        print("Takeda says: Here's the launch code I found it. It's 734.")
-        inventory.append("Launch_Code")\
+        print("Takeda says: Here's the launch code, I found it. It's 734.")
+        inventory.append("Launch_Code")
 
     return True
     
@@ -343,15 +347,15 @@ def location5_escapepodbay():
     print("\nYou approach the pod's computer.")
     while True:
         try:
-            if "Captain_Keycard" in inventory and "Launch_Code" in inventory:
-                print("\n Computer: Keycard detected. Launch code accepted.")   # best ending if player has keycard and launch code
+            if "Keycard" in inventory and "Launch_Code" in inventory:
+                print("\n Computer: Keycard detected. Launch code accepted.")   # best ending if player has Keycard and launch code
                 print("\n Best Ending! You escaped successfully")
                 return True
 
 
             
-            elif "Captain_Keycard" in inventory or "Launch_Code" in inventory:  # second best ending if player has one or the other
-                print("\nComputer: Missing authorization. Launch requires both keycard")
+            elif "Keycard" in inventory or "Launch_Code" in inventory:  # second best ending if player has one or the other
+                print("\nComputer: Missing authorization. Launch requires both Keycard")
                 print("\nThe alarms get louder. The ship explodes")
                 print("\nAverage Ending! You made it to the end but didn't escape....")
                 return False
