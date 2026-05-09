@@ -1,5 +1,5 @@
 from audit import create_audit_log
-from player import health, inventory, player_name, player_class, check_Death
+from player import health, inventory, player_name, player_class, check_death
 import player
 
 # _____________________________________________________________________   # FIRST STORY LOCATION
