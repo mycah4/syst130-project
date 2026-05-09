@@ -303,7 +303,7 @@ def location5_escapepodbay():
                 print("\nComputer: No authorization detected. Launch denied")  # worst ending, if player doesn't have either
                 print("\nThe ship explodes. You don't escape")
                 print("\nThe worst ending! You didn't have any authorization")
-              create_audit_log("LOSS", "Worst ending")
+                create_audit_log("LOSS", "Worst ending")
                 return False
 
         except:
