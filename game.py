@@ -16,8 +16,8 @@ player_class = ""
 def create_audit_log(event_type, details, timestamp):
     timestamp = datatime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-with open("audit_log.txt", "a") as log_file:
-    log_file.write(f"[{timestamp}] {event_type}: {details}\n")
+    with open("audit_log.txt", "a") as log_file:
+        log_file.write(f"[{timestamp}] {event_type}: {details}\n")
 
 # ____________________________________________________________________  # SAVE & LOAD WITH TAMPER CHECK
     
@@ -32,7 +32,7 @@ def save_game():       # save game with JSON and SHA256 hash for temper detectio
         }
 
     
-    json.data = json.dumps(game_data) # makes dictionary into a JSON string
+    json_data = json.dumps(game_data) # makes dictionary into a JSON string
 
     game_hash = hashlib.sha256(json_data.encode()).hexdigest()  # creates sha256 of json string
 
