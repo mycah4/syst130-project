@@ -34,7 +34,7 @@ player_class = ""
 def check_death(): # checks if player health is 0
     global health
     
-    if health <= 0
+    if health <= 0:
         print("You have died...")
         exit()
     
