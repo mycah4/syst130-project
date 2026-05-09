@@ -8,8 +8,10 @@ from save_load import save_game, load_game
 def start_game():
     print("\nAdventure to escape space!") 
 
+    saved_data = load_game() # grabs saved data first
+    
     if saved_data:     # finding and loading saved file
-        player.health = sava_data["health"]
+        player.health = saved_data["health"]
         player.inventory = saved_data["inventory"] 
         player.player_name = saved_data["player_name"]
         player.player_class = saved_data["player_class"]
@@ -24,7 +26,7 @@ def start_game():
 
     save_choice = input("\nSave game? (yes/no):  ")
     if save_choice == "yes":
-        save_game(player.health, player.inventory, player.player_name, player.player_class
+        save_game(player.health, player.inventory, player.player_name, player.player_class)
 
     path = locations.select_path()
 
@@ -53,7 +55,7 @@ def start_game():
 
     print("\nYour final stats! ") # prints final stats
     player.show_stats()
-    create_audit_log("Complete", Game finished")
+    create_audit_log("Complete", "Game finished")
 
 # _____________________________________________________________________  #  MAIN MENU        
 
@@ -70,7 +72,7 @@ while True: # prompts main menu
         start_game()
         break
     elif choice == "2": # loads new game
-        create_audit_log("MENU", Loading saved game")
+        create_audit_log("MENU", "Loading saved game")
         saved = load_game()
         if saved:
             player.health = saved["health"]
@@ -82,7 +84,7 @@ while True: # prompts main menu
         break
     elif choice == "3": # exits the game
         print("\nYou exited the game")
-        create_audit_log("\nEXIT", "Player quit")
+        create_audit_log("EXIT", "Player quit")
         exit()
     else:
         print("\nInvalid choice. Enter 1, 2, or 3")
