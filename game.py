@@ -1,6 +1,6 @@
 import player
 import locations
-from audit iomport create_audit_log
+from audit import create_audit_log
 from save_load import save_game, load_game
     
 # _____________________________________________________________________  # MAIN GAME
