@@ -305,7 +305,7 @@ def location4_engineroom():
 
             elif choice == 3:
                 if "Conductive_Rod" in inventory:                # looks for rod to seal the vent
-                    print("\nTakeda uses the rod to seal the vent!" 
+                    print("\nTakeda uses the rod to seal the vent!")
                           
                 else
                     health = health - 25             #-25 from gas
