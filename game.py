@@ -30,6 +30,13 @@ health = 100
 inventory = []
 player_name = ""
 player_class = ""
+# _____________________________________________________________________   # HEALTH CHECK
+def check_death(): # checks if player health is 0
+    if health >= 0
+        print("You have died...")
+        exit()
+    
+
 # _____________________________________________________________________   # PLAYER CREATION
 
 def show_stats():    # function to display stats
@@ -114,7 +121,8 @@ def location1_hangarbay():
             
             if user_choice2 == 1:
                 health = health - 20
-                print("\nYou took 20 damage... Health: " , health)   # lowers player's health
+                print("\nYou took 20 damage... Health: " , health)  # lowers player's health
+                check_death()
                 break
 
             
@@ -191,6 +199,7 @@ def location2_bridge():
     else:
         print("\nYou got the answer wrong, the Captain's Hologram shocks you")  # damages you for wrong answer
         health = health - 15
+        check_death()
         print("\nHealth: ", health)
 
 
@@ -306,6 +315,7 @@ def location4_engineroom():
 
             elif choice == 2:
                 health = health - 40
+                check_death()
                 print("You run through the gas and take damage. Health: ", health) # -40 health from gas
                 break
 
@@ -315,6 +325,7 @@ def location4_engineroom():
                           
                 else:
                     health = health - 25             #-25 from gas
+                    check_death()
                     print("\nTakeda is too slow and you take damage. Health:", health)
                 
                 break
