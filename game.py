@@ -211,7 +211,7 @@ def location2_bridge():
                     print("You failed, the bridge is locking down")       # failed to answer the question correctly
                     return False
 
-            elif second_chance == "no":   # player escapes with nothing
+            elif anotherchance == "no":   # player escapes with nothing
                 print("\nYou leave the bridge with nothing...")
                 return False
         
@@ -373,7 +373,7 @@ def start_game():
 
     location1_hangarbay()
 
-    path = choose_path()
+    path = select_path()
 
 
     if path == 1:
